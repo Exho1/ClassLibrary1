@@ -5,6 +5,7 @@ ehthumbs.db
 # Folder config file
 Desktop.ini
 
+# Secrets
 Credentials.cs
 
 # Recycle Bin used on file shares
