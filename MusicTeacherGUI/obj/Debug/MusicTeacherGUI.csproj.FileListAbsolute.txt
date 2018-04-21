@@ -1,0 +1,10 @@
+C:\Users\Nathaniel\source\repos\ClassLibrary1\MusicTeacherGUI\bin\Debug\MusicTeacherGUI.exe.config
+C:\Users\Nathaniel\source\repos\ClassLibrary1\MusicTeacherGUI\bin\Debug\MusicTeacherGUI.exe
+C:\Users\Nathaniel\source\repos\ClassLibrary1\MusicTeacherGUI\bin\Debug\MusicTeacherGUI.pdb
+C:\Users\Nathaniel\source\repos\ClassLibrary1\MusicTeacherGUI\obj\Debug\MusicTeacherGUI.csprojResolveAssemblyReference.cache
+C:\Users\Nathaniel\source\repos\ClassLibrary1\MusicTeacherGUI\obj\Debug\MusicTeacherGUI.frmApp.resources
+C:\Users\Nathaniel\source\repos\ClassLibrary1\MusicTeacherGUI\obj\Debug\MusicTeacherGUI.Properties.Resources.resources
+C:\Users\Nathaniel\source\repos\ClassLibrary1\MusicTeacherGUI\obj\Debug\MusicTeacherGUI.csproj.GenerateResource.Cache
+C:\Users\Nathaniel\source\repos\ClassLibrary1\MusicTeacherGUI\obj\Debug\MusicTeacherGUI.csproj.CoreCompileInputs.cache
+C:\Users\Nathaniel\source\repos\ClassLibrary1\MusicTeacherGUI\obj\Debug\MusicTeacherGUI.exe
+C:\Users\Nathaniel\source\repos\ClassLibrary1\MusicTeacherGUI\obj\Debug\MusicTeacherGUI.pdb

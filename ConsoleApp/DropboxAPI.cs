@@ -8,11 +8,13 @@ using DropboxUpload;
 
 namespace ConsoleApp
 {
-    class Program
+    class DropboxAPI
     {
         static void Main(string[] args)
         {
             MainAsync(args);
+
+            // Deprecated, using windows forms instead
 
             Console.ReadLine();
         }
@@ -21,6 +23,11 @@ namespace ConsoleApp
         {
             Uploader testUpload = new Uploader();
             await testUpload.UploadVideoFile(@"E: \Users\Nathaniel\Videos\Sample Videos\Bear.wmv", "ITSABEAR.wmv");
+        }
+
+        public static async void UploadVideo()
+        {
+
         }
     }
 }
