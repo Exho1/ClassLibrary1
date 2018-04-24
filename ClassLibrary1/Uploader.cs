@@ -16,12 +16,19 @@ namespace DropboxUpload
 
         }
 
+        private DropboxClient client;
+
+        public Action<string> getProgress()
+        {
+            return client.Progress;
+        }
+
         public async Task UploadVideoFile(string sourcePath, string newPath)
         {
             Console.WriteLine("Starting upload");
 
             // Create a new dropbox client
-            DropboxClient client = new DropboxClient(Credentials.key, Credentials.secret);
+            client = new DropboxClient(Credentials.key, Credentials.secret);
 
             // Create a request to upload a file
             UploadFileRequest req = new UploadFileRequest(newPath);

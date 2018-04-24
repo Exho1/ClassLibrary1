@@ -8,3 +8,15 @@ C:\Users\Nathaniel\source\repos\ClassLibrary1\MusicTeacherGUI\obj\Debug\MusicTea
 C:\Users\Nathaniel\source\repos\ClassLibrary1\MusicTeacherGUI\obj\Debug\MusicTeacherGUI.csproj.CoreCompileInputs.cache
 C:\Users\Nathaniel\source\repos\ClassLibrary1\MusicTeacherGUI\obj\Debug\MusicTeacherGUI.exe
 C:\Users\Nathaniel\source\repos\ClassLibrary1\MusicTeacherGUI\obj\Debug\MusicTeacherGUI.pdb
+C:\Users\Nathaniel\source\repos\ClassLibrary1\MusicTeacherGUI\bin\Debug\ClassLibrary1.dll
+C:\Users\Nathaniel\source\repos\ClassLibrary1\MusicTeacherGUI\bin\Debug\Dropbox.dll
+C:\Users\Nathaniel\source\repos\ClassLibrary1\MusicTeacherGUI\bin\Debug\netstandard.dll
+C:\Users\Nathaniel\source\repos\ClassLibrary1\MusicTeacherGUI\bin\Debug\Carbon.OAuth2.dll
+C:\Users\Nathaniel\source\repos\ClassLibrary1\MusicTeacherGUI\bin\Debug\Carbon.Storage.dll
+C:\Users\Nathaniel\source\repos\ClassLibrary1\MusicTeacherGUI\bin\Debug\Carbon.Json.dll
+C:\Users\Nathaniel\source\repos\ClassLibrary1\MusicTeacherGUI\bin\Debug\Carbon.Forms.dll
+C:\Users\Nathaniel\source\repos\ClassLibrary1\MusicTeacherGUI\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\Nathaniel\source\repos\ClassLibrary1\MusicTeacherGUI\bin\Debug\System.Text.Encodings.Web.dll
+C:\Users\Nathaniel\source\repos\ClassLibrary1\MusicTeacherGUI\bin\Debug\ClassLibrary1.pdb
+C:\Users\Nathaniel\source\repos\ClassLibrary1\MusicTeacherGUI\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\Nathaniel\source\repos\ClassLibrary1\MusicTeacherGUI\bin\Debug\System.Text.Encodings.Web.xml

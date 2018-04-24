@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("Test");
             System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("DoubleTest");
+            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("Test");
             this.pnlLogin = new System.Windows.Forms.Panel();
             this.btnTeachView = new System.Windows.Forms.Button();
             this.btnStudentView = new System.Windows.Forms.Button();
@@ -41,12 +41,18 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.s_tabUpload = new System.Windows.Forms.TabPage();
-            this.s_btnUpload = new System.Windows.Forms.Button();
-            this.s_fileSelector = new System.Windows.Forms.OpenFileDialog();
+            this.s_rchFileDetails = new System.Windows.Forms.RichTextBox();
+            this.s_btnFileUpload = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.s_cmboUploadAssignment = new System.Windows.Forms.ComboBox();
+            this.s_cmboUploadClass = new System.Windows.Forms.ComboBox();
+            this.s_btnSelect = new System.Windows.Forms.Button();
             this.s_tabGrades = new System.Windows.Forms.TabPage();
-            this.s_listClasses = new System.Windows.Forms.ListView();
             this.s_listGrades = new System.Windows.Forms.ListView();
+            this.s_listClasses = new System.Windows.Forms.ListView();
             this.s_tabAssignments = new System.Windows.Forms.TabPage();
+            this.s_fileSelector = new System.Windows.Forms.OpenFileDialog();
             this.pnlLogin.SuspendLayout();
             this.pnlStudent.SuspendLayout();
             this.s_tabCntrl.SuspendLayout();
@@ -95,8 +101,8 @@
             // 
             // s_tabCntrl
             // 
-            this.s_tabCntrl.Controls.Add(this.s_tabUpload);
             this.s_tabCntrl.Controls.Add(this.s_tabHome);
+            this.s_tabCntrl.Controls.Add(this.s_tabUpload);
             this.s_tabCntrl.Controls.Add(this.s_tabGrades);
             this.s_tabCntrl.Controls.Add(this.s_tabAssignments);
             this.s_tabCntrl.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -165,7 +171,13 @@
             // 
             // s_tabUpload
             // 
-            this.s_tabUpload.Controls.Add(this.s_btnUpload);
+            this.s_tabUpload.Controls.Add(this.s_rchFileDetails);
+            this.s_tabUpload.Controls.Add(this.s_btnFileUpload);
+            this.s_tabUpload.Controls.Add(this.label3);
+            this.s_tabUpload.Controls.Add(this.label2);
+            this.s_tabUpload.Controls.Add(this.s_cmboUploadAssignment);
+            this.s_tabUpload.Controls.Add(this.s_cmboUploadClass);
+            this.s_tabUpload.Controls.Add(this.s_btnSelect);
             this.s_tabUpload.Location = new System.Drawing.Point(4, 22);
             this.s_tabUpload.Name = "s_tabUpload";
             this.s_tabUpload.Padding = new System.Windows.Forms.Padding(3);
@@ -175,22 +187,72 @@
             this.s_tabUpload.UseVisualStyleBackColor = true;
             this.s_tabUpload.Click += new System.EventHandler(this.s_tabUpload_Click);
             // 
-            // s_btnUpload
+            // s_rchFileDetails
             // 
-            this.s_btnUpload.Location = new System.Drawing.Point(238, 92);
-            this.s_btnUpload.Name = "s_btnUpload";
-            this.s_btnUpload.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.s_btnUpload.Size = new System.Drawing.Size(157, 37);
-            this.s_btnUpload.TabIndex = 4;
-            this.s_btnUpload.Text = "Select File";
-            this.s_btnUpload.UseVisualStyleBackColor = true;
-            this.s_btnUpload.Click += new System.EventHandler(this.button5_Click);
+            this.s_rchFileDetails.DetectUrls = false;
+            this.s_rchFileDetails.Location = new System.Drawing.Point(451, 174);
+            this.s_rchFileDetails.Name = "s_rchFileDetails";
+            this.s_rchFileDetails.ReadOnly = true;
+            this.s_rchFileDetails.Size = new System.Drawing.Size(157, 200);
+            this.s_rchFileDetails.TabIndex = 10;
+            this.s_rchFileDetails.Text = "";
             // 
-            // s_fileSelector
+            // s_btnFileUpload
             // 
-            this.s_fileSelector.FileName = "openFileDialog1";
-            this.s_fileSelector.Filter = "\"Media Files|*.mov;*.wmv;*.wma;*.mp4;*.mp3|All Files|*.*\"";
-            this.s_fileSelector.FileOk += new System.ComponentModel.CancelEventHandler(this.s_fileSelector_FileOk);
+            this.s_btnFileUpload.Enabled = false;
+            this.s_btnFileUpload.Location = new System.Drawing.Point(451, 114);
+            this.s_btnFileUpload.Name = "s_btnFileUpload";
+            this.s_btnFileUpload.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.s_btnFileUpload.Size = new System.Drawing.Size(157, 37);
+            this.s_btnFileUpload.TabIndex = 9;
+            this.s_btnFileUpload.Text = "Upload File";
+            this.s_btnFileUpload.UseVisualStyleBackColor = true;
+            this.s_btnFileUpload.Click += new System.EventHandler(this.s_btnFile_ClickAsync);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(27, 98);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(61, 13);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Assignment";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(27, 49);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(32, 13);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Class";
+            // 
+            // s_cmboUploadAssignment
+            // 
+            this.s_cmboUploadAssignment.FormattingEnabled = true;
+            this.s_cmboUploadAssignment.Location = new System.Drawing.Point(30, 114);
+            this.s_cmboUploadAssignment.Name = "s_cmboUploadAssignment";
+            this.s_cmboUploadAssignment.Size = new System.Drawing.Size(171, 21);
+            this.s_cmboUploadAssignment.TabIndex = 6;
+            // 
+            // s_cmboUploadClass
+            // 
+            this.s_cmboUploadClass.FormattingEnabled = true;
+            this.s_cmboUploadClass.Location = new System.Drawing.Point(30, 65);
+            this.s_cmboUploadClass.Name = "s_cmboUploadClass";
+            this.s_cmboUploadClass.Size = new System.Drawing.Size(171, 21);
+            this.s_cmboUploadClass.TabIndex = 5;
+            // 
+            // s_btnSelect
+            // 
+            this.s_btnSelect.Location = new System.Drawing.Point(451, 65);
+            this.s_btnSelect.Name = "s_btnSelect";
+            this.s_btnSelect.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.s_btnSelect.Size = new System.Drawing.Size(157, 37);
+            this.s_btnSelect.TabIndex = 4;
+            this.s_btnSelect.Text = "Select File";
+            this.s_btnSelect.UseVisualStyleBackColor = true;
+            this.s_btnSelect.Click += new System.EventHandler(this.button5_Click);
             // 
             // s_tabGrades
             // 
@@ -204,17 +266,6 @@
             this.s_tabGrades.Text = "Grades";
             this.s_tabGrades.UseVisualStyleBackColor = true;
             // 
-            // s_listClasses
-            // 
-            this.s_listClasses.Dock = System.Windows.Forms.DockStyle.Left;
-            this.s_listClasses.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem2});
-            this.s_listClasses.Location = new System.Drawing.Point(3, 3);
-            this.s_listClasses.Name = "s_listClasses";
-            this.s_listClasses.Size = new System.Drawing.Size(189, 402);
-            this.s_listClasses.TabIndex = 0;
-            this.s_listClasses.UseCompatibleStateImageBehavior = false;
-            // 
             // s_listGrades
             // 
             this.s_listGrades.Dock = System.Windows.Forms.DockStyle.Left;
@@ -226,6 +277,17 @@
             this.s_listGrades.TabIndex = 1;
             this.s_listGrades.UseCompatibleStateImageBehavior = false;
             // 
+            // s_listClasses
+            // 
+            this.s_listClasses.Dock = System.Windows.Forms.DockStyle.Left;
+            this.s_listClasses.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
+            listViewItem2});
+            this.s_listClasses.Location = new System.Drawing.Point(3, 3);
+            this.s_listClasses.Name = "s_listClasses";
+            this.s_listClasses.Size = new System.Drawing.Size(189, 402);
+            this.s_listClasses.TabIndex = 0;
+            this.s_listClasses.UseCompatibleStateImageBehavior = false;
+            // 
             // s_tabAssignments
             // 
             this.s_tabAssignments.Location = new System.Drawing.Point(4, 22);
@@ -235,6 +297,12 @@
             this.s_tabAssignments.TabIndex = 3;
             this.s_tabAssignments.Text = "Assignments";
             this.s_tabAssignments.UseVisualStyleBackColor = true;
+            // 
+            // s_fileSelector
+            // 
+            this.s_fileSelector.FileName = "openFileDialog1";
+            this.s_fileSelector.Filter = "\"Media Files|*.mov;*.wmv;*.wma;*.mp4;*.mp3|All Files|*.*\"";
+            this.s_fileSelector.FileOk += new System.ComponentModel.CancelEventHandler(this.s_fileSelector_FileOk);
             // 
             // frmApp
             // 
@@ -252,6 +320,7 @@
             this.s_tabHome.ResumeLayout(false);
             this.s_tabHome.PerformLayout();
             this.s_tabUpload.ResumeLayout(false);
+            this.s_tabUpload.PerformLayout();
             this.s_tabGrades.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -270,12 +339,18 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button s_btnUpload;
+        private System.Windows.Forms.Button s_btnSelect;
         private System.Windows.Forms.OpenFileDialog s_fileSelector;
         private System.Windows.Forms.TabPage s_tabGrades;
         private System.Windows.Forms.ListView s_listGrades;
         private System.Windows.Forms.ListView s_listClasses;
         private System.Windows.Forms.TabPage s_tabAssignments;
+        private System.Windows.Forms.ComboBox s_cmboUploadClass;
+        private System.Windows.Forms.Button s_btnFileUpload;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox s_cmboUploadAssignment;
+        private System.Windows.Forms.RichTextBox s_rchFileDetails;
     }
 }
 

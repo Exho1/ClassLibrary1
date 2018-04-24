@@ -8,10 +8,6 @@ Desktop.ini
 # Secrets
 Credentials.cs
 
-# Hide builds
-bin\debug\*
-obj\debug\*
-
 # Recycle Bin used on file shares
 $RECYCLE.BIN/
 

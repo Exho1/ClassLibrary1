@@ -8,6 +8,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using System.IO;
+using System.Diagnostics;
+using DropboxUpload;
+
 namespace MusicTeacherGUI
 {
     public partial class frmApp : Form
@@ -25,6 +29,8 @@ namespace MusicTeacherGUI
          *          - camelCase for variables
          *          
          */
+
+        private Uploader studentUploader = new Uploader();
 
         public frmApp()
         {
@@ -73,7 +79,15 @@ namespace MusicTeacherGUI
 
         private void s_fileSelector_FileOk(object sender, CancelEventArgs e)
         {
-            s_btnUpload.Text = "File Selected";
+            s_btnSelect.Text = "File Selected";
+            s_btnFileUpload.Enabled = true;
+
+            Debug.WriteLine("slob on me knob " + s_fileSelector.FileName);
+
+            FileInfo f = new FileInfo(s_fileSelector.FileName);
+
+            s_rchFileDetails.AppendText("Selected: " + f.Name + "\n");
+            s_rchFileDetails.AppendText("File Size: " + Math.Round(f.Length / 1048576f, 1)  + " mb \n");
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -84,6 +98,22 @@ namespace MusicTeacherGUI
         private void s_tabHome_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private async void s_btnFile_ClickAsync(object sender, EventArgs e)
+        {
+            s_rchFileDetails.AppendText("\nStarting upload...\n");
+
+            await studentUploader.UploadVideoFile(s_fileSelector.FileName, "Uploaded this bear from our app.mp4");
+
+            /*Action<string> prog = studentUploader.getProgress();
+
+            while (prog!= null)
+            {
+                s_rchFileDetails.AppendText(prog(""));
+            }*/
+        
+            s_rchFileDetails.AppendText("Upload complete! \n");
         }
     }
 }
