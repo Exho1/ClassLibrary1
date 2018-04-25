@@ -47,12 +47,15 @@ namespace MusicTeacherGUI
         private void btnStudentView_Click(object sender, EventArgs e)
         {
             pnlLogin.Visible = false;
+            pnlTeacher.Visible = false;
             pnlStudent.Visible = true;
         }
 
         private void btnTeachView_Click(object sender, EventArgs e)
         {
-
+            pnlLogin.Visible = false;
+            pnlStudent.Visible = false;
+            pnlTeacher.Visible = true;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -70,6 +73,7 @@ namespace MusicTeacherGUI
             
         }
 
+        // Opens the file selector
         private void button5_Click(object sender, EventArgs e)
         {
             s_fileSelector.ShowDialog();
@@ -77,17 +81,28 @@ namespace MusicTeacherGUI
             s_fileSelector.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyVideos);
         }
 
+        // Called when a file is validated
         private void s_fileSelector_FileOk(object sender, CancelEventArgs e)
         {
+            s_resetUploader();
+
             s_btnSelect.Text = "File Selected";
             s_btnFileUpload.Enabled = true;
 
-            Debug.WriteLine("slob on me knob " + s_fileSelector.FileName);
+            string fullFilePath = s_fileSelector.FileName;
 
-            FileInfo f = new FileInfo(s_fileSelector.FileName);
+            Debug.WriteLine(fullFilePath);
 
+            FileInfo f = new FileInfo(fullFilePath);
+
+            // Gets a thumbnail frame
+            string thumb = studentUploader.getVideoThumbnail(fullFilePath);
+            s_picThumbnail.Image = Image.FromFile(thumb);
+
+            // Give feedback about the file before uploading
             s_rchFileDetails.AppendText("Selected: " + f.Name + "\n");
             s_rchFileDetails.AppendText("File Size: " + Math.Round(f.Length / 1048576f, 1)  + " mb \n");
+            s_rchFileDetails.AppendText("Ready to upload! \n");
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -115,5 +130,15 @@ namespace MusicTeacherGUI
         
             s_rchFileDetails.AppendText("Upload complete! \n");
         }
+
+        private void s_resetUploader()
+        {
+            s_rchFileDetails.ResetText();
+            s_picThumbnail.Image = null;
+
+            s_btnSelect.ResetText();
+            s_btnFileUpload.Enabled = false;
+        }
+
     }
 }

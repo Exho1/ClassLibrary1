@@ -20,3 +20,4 @@ C:\Users\Nathaniel\source\repos\ClassLibrary1\MusicTeacherGUI\bin\Debug\System.T
 C:\Users\Nathaniel\source\repos\ClassLibrary1\MusicTeacherGUI\bin\Debug\ClassLibrary1.pdb
 C:\Users\Nathaniel\source\repos\ClassLibrary1\MusicTeacherGUI\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\Nathaniel\source\repos\ClassLibrary1\MusicTeacherGUI\bin\Debug\System.Text.Encodings.Web.xml
+C:\Users\Nathaniel\source\repos\ClassLibrary1\MusicTeacherGUI\bin\Debug\MediaToolkit.dll

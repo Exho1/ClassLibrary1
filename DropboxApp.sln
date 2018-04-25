@@ -5,8 +5,6 @@ VisualStudioVersion = 15.0.27130.2024
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DropboxUpload", "ClassLibrary1\DropboxUpload.csproj", "{693B34D7-38F1-4F6A-B0B1-1F892D4F751E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp", "ConsoleApp\ConsoleApp.csproj", "{AD48B563-F7A0-4C80-9E10-135A2505B648}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicTeacherGUI", "MusicTeacherGUI\MusicTeacherGUI.csproj", "{66E82B38-A6A0-4EA2-A304-78FADD9E8F49}"
 EndProject
 Global
@@ -19,10 +17,6 @@ Global
 		{693B34D7-38F1-4F6A-B0B1-1F892D4F751E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{693B34D7-38F1-4F6A-B0B1-1F892D4F751E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{693B34D7-38F1-4F6A-B0B1-1F892D4F751E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AD48B563-F7A0-4C80-9E10-135A2505B648}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AD48B563-F7A0-4C80-9E10-135A2505B648}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AD48B563-F7A0-4C80-9E10-135A2505B648}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AD48B563-F7A0-4C80-9E10-135A2505B648}.Release|Any CPU.Build.0 = Release|Any CPU
 		{66E82B38-A6A0-4EA2-A304-78FADD9E8F49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{66E82B38-A6A0-4EA2-A304-78FADD9E8F49}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{66E82B38-A6A0-4EA2-A304-78FADD9E8F49}.Release|Any CPU.ActiveCfg = Release|Any CPU

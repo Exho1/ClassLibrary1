@@ -224,3 +224,4 @@ E:\Users\Nathaniel\Source\Repos\MusicTeacherApp3\ClassLibrary1\obj\Debug\Dropbox
 E:\Users\Nathaniel\Source\Repos\MusicTeacherApp3\ClassLibrary1\obj\Debug\DropboxUpload.csproj.CoreCompileInputs.cache
 E:\Users\Nathaniel\Source\Repos\MusicTeacherApp3\ClassLibrary1\obj\Debug\ClassLibrary1.dll
 E:\Users\Nathaniel\Source\Repos\MusicTeacherApp3\ClassLibrary1\obj\Debug\ClassLibrary1.pdb
+C:\Users\Nathaniel\source\repos\ClassLibrary1\ClassLibrary1\bin\Debug\MediaToolkit.dll

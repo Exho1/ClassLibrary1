@@ -6,6 +6,9 @@ using System.IO;
 using System.Threading.Tasks;
 
 using Dropbox;
+using MediaToolkit;
+using MediaToolkit.Options;
+using MediaToolkit.Model;
 
 namespace DropboxUpload
 {
@@ -47,6 +50,26 @@ namespace DropboxUpload
 
             Console.WriteLine("Upload finished");
 
+        }
+
+        public string getVideoThumbnail( string filePath )
+        {
+
+            Directory.CreateDirectory(Path.GetTempPath() + "musicteacherapp");
+
+            var inputFile = new MediaFile { Filename = filePath };
+            var outputFile = new MediaFile { Filename = Path.GetTempPath() + @"musicteacherapp\" + Path.GetFileNameWithoutExtension(filePath) + ".jpg" };
+
+            using (var engine = new Engine())
+            {
+                engine.GetMetadata(inputFile);
+
+                // Saves a thumbnail frame
+                var options = new ConversionOptions { Seek = TimeSpan.FromSeconds(1) };
+                engine.GetThumbnail(inputFile, outputFile, options);
+            }
+
+            return outputFile.Filename;
         }
     }
 }
