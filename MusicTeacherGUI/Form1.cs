@@ -140,5 +140,14 @@ namespace MusicTeacherGUI
             s_btnFileUpload.Enabled = false;
         }
 
+        private void t_tabOverview_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void t_btnGrade_Click(object sender, EventArgs e)
+        {
+            t_tabCntrlTeacher.SelectedTab = t_tabGrade;
+        }
     }
 }
