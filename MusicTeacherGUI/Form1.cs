@@ -147,8 +147,7 @@ namespace MusicTeacherGUI
 
             string uploadURL = await studentUploader.UploadVideoFile(s_fileSelector.FileName, "Uploaded this bear from our app.mp4");
 
-
-
+            // This would involve some multithreading
             /*Action<string> prog = studentUploader.getProgress();
 
             while (prog!= null)
