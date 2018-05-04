@@ -29,10 +29,22 @@
         private void InitializeComponent()
         {
             this.pnlLogin = new System.Windows.Forms.Panel();
+            this.btn_Login = new System.Windows.Forms.Button();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.btnTeachView = new System.Windows.Forms.Button();
             this.btnStudentView = new System.Windows.Forms.Button();
             this.pnlStudent = new System.Windows.Forms.Panel();
             this.s_tabCntrl = new System.Windows.Forms.TabControl();
+            this.s_tabHome = new System.Windows.Forms.TabPage();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.s_tabUpload = new System.Windows.Forms.TabPage();
             this.s_picThumbnail = new System.Windows.Forms.PictureBox();
             this.s_rchFileDetails = new System.Windows.Forms.RichTextBox();
@@ -42,14 +54,17 @@
             this.s_cmboUploadAssignment = new System.Windows.Forms.ComboBox();
             this.s_cmboUploadClass = new System.Windows.Forms.ComboBox();
             this.s_btnSelect = new System.Windows.Forms.Button();
-            this.s_tabGrades = new System.Windows.Forms.TabPage();
-            this.s_listGrades = new System.Windows.Forms.ListView();
             this.s_tabAssignments = new System.Windows.Forms.TabPage();
-            this.s_tabHome = new System.Windows.Forms.TabPage();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.label23 = new System.Windows.Forms.Label();
+            this.s_rchAssignmentInstructions = new System.Windows.Forms.RichTextBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.listView4 = new System.Windows.Forms.ListView();
+            this.s_tabGrades = new System.Windows.Forms.TabPage();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.s_listGrades = new System.Windows.Forms.ListView();
             this.s_fileSelector = new System.Windows.Forms.OpenFileDialog();
             this.t_tabCntrlTeacher = new System.Windows.Forms.TabControl();
             this.t_tabHome = new System.Windows.Forms.TabPage();
@@ -57,77 +72,78 @@
             this.t_btnGrade = new System.Windows.Forms.Button();
             this.t_btnClassView = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.pnlTeacher = new System.Windows.Forms.Panel();
             this.t_tabGrade = new System.Windows.Forms.TabPage();
-            this.t_lstClassOverview = new System.Windows.Forms.ListView();
-            this.label7 = new System.Windows.Forms.Label();
-            this.t_lstStudentOverview = new System.Windows.Forms.ListView();
-            this.label8 = new System.Windows.Forms.Label();
-            this.t_lstAssignmentOverview = new System.Windows.Forms.ListView();
-            this.label9 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.t_btnGradeChangeCancel = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
+            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.t_btnGradeChangeSave = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.t_btnGradeChangeCancel = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.t_lstAssignmentOverview = new System.Windows.Forms.ListView();
+            this.label8 = new System.Windows.Forms.Label();
+            this.t_lstStudentOverview = new System.Windows.Forms.ListView();
+            this.label7 = new System.Windows.Forms.Label();
+            this.t_lstClassOverview = new System.Windows.Forms.ListView();
             this.t_tabCreateAssignment = new System.Windows.Forms.TabPage();
-            this.t_cmboClassCreate = new System.Windows.Forms.ComboBox();
-            this.label12 = new System.Windows.Forms.Label();
+            this.t_btnCreateAssignment = new System.Windows.Forms.Button();
+            this.t_btnDiscardAssignment = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label14 = new System.Windows.Forms.Label();
-            this.t_txtAssignmentName = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.t_calAssignmentDue = new System.Windows.Forms.MonthCalendar();
-            this.t_calAssignmentAvail = new System.Windows.Forms.MonthCalendar();
-            this.label13 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.t_rchAssignmentComments = new System.Windows.Forms.RichTextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.t_txtAssignmentPoints = new System.Windows.Forms.TextBox();
-            this.t_rchAssignmentComments = new System.Windows.Forms.RichTextBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.t_btnDiscardAssignment = new System.Windows.Forms.Button();
-            this.t_btnCreateAssignment = new System.Windows.Forms.Button();
+            this.t_calAssignmentAvail = new System.Windows.Forms.MonthCalendar();
+            this.label13 = new System.Windows.Forms.Label();
+            this.t_calAssignmentDue = new System.Windows.Forms.MonthCalendar();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.t_txtAssignmentName = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.t_cmboClassCreate = new System.Windows.Forms.ComboBox();
             this.t_tabClassOverview = new System.Windows.Forms.TabPage();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.t_lblStudentGrade = new System.Windows.Forms.Label();
+            this.t_lblClassGrade = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.listView1 = new System.Windows.Forms.ListView();
             this.label19 = new System.Windows.Forms.Label();
             this.listView2 = new System.Windows.Forms.ListView();
-            this.label20 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.label21 = new System.Windows.Forms.Label();
-            this.t_lblClassGrade = new System.Windows.Forms.Label();
-            this.t_lblStudentGrade = new System.Windows.Forms.Label();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.listView4 = new System.Windows.Forms.ListView();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.listView5 = new System.Windows.Forms.ListView();
+            this.pnlTeacher = new System.Windows.Forms.Panel();
             this.pnlLogin.SuspendLayout();
             this.pnlStudent.SuspendLayout();
             this.s_tabCntrl.SuspendLayout();
+            this.s_tabHome.SuspendLayout();
             this.s_tabUpload.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.s_picThumbnail)).BeginInit();
-            this.s_tabGrades.SuspendLayout();
             this.s_tabAssignments.SuspendLayout();
-            this.s_tabHome.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.s_tabGrades.SuspendLayout();
             this.t_tabCntrlTeacher.SuspendLayout();
             this.t_tabHome.SuspendLayout();
-            this.pnlTeacher.SuspendLayout();
             this.t_tabGrade.SuspendLayout();
             this.panel1.SuspendLayout();
             this.t_tabCreateAssignment.SuspendLayout();
             this.panel2.SuspendLayout();
             this.t_tabClassOverview.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.pnlTeacher.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlLogin
             // 
+            this.pnlLogin.Controls.Add(this.btn_Login);
+            this.pnlLogin.Controls.Add(this.label27);
+            this.pnlLogin.Controls.Add(this.label26);
+            this.pnlLogin.Controls.Add(this.maskedTextBox1);
+            this.pnlLogin.Controls.Add(this.label25);
+            this.pnlLogin.Controls.Add(this.label24);
+            this.pnlLogin.Controls.Add(this.textBox2);
             this.pnlLogin.Controls.Add(this.btnTeachView);
             this.pnlLogin.Controls.Add(this.btnStudentView);
             this.pnlLogin.Location = new System.Drawing.Point(12, 12);
@@ -135,11 +151,73 @@
             this.pnlLogin.Size = new System.Drawing.Size(675, 434);
             this.pnlLogin.TabIndex = 0;
             // 
+            // btn_Login
+            // 
+            this.btn_Login.Location = new System.Drawing.Point(265, 222);
+            this.btn_Login.Name = "btn_Login";
+            this.btn_Login.Size = new System.Drawing.Size(160, 33);
+            this.btn_Login.TabIndex = 8;
+            this.btn_Login.Text = "Login";
+            this.btn_Login.UseVisualStyleBackColor = true;
+            this.btn_Login.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.Location = new System.Drawing.Point(168, 101);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(47, 16);
+            this.label27.TabIndex = 7;
+            this.label27.Text = "I am a:";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(372, 153);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(53, 13);
+            this.label26.TabIndex = 6;
+            this.label26.Text = "Password";
+            // 
+            // maskedTextBox1
+            // 
+            this.maskedTextBox1.Location = new System.Drawing.Point(375, 172);
+            this.maskedTextBox1.Name = "maskedTextBox1";
+            this.maskedTextBox1.Size = new System.Drawing.Size(134, 20);
+            this.maskedTextBox1.TabIndex = 5;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(372, 111);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(55, 13);
+            this.label25.TabIndex = 4;
+            this.label25.Text = "Username";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.Location = new System.Drawing.Point(261, 51);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(176, 20);
+            this.label24.TabIndex = 3;
+            this.label24.Text = "Placeholder Login Page";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(375, 128);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(134, 20);
+            this.textBox2.TabIndex = 2;
+            // 
             // btnTeachView
             // 
-            this.btnTeachView.Location = new System.Drawing.Point(384, 114);
+            this.btnTeachView.Location = new System.Drawing.Point(193, 121);
             this.btnTeachView.Name = "btnTeachView";
-            this.btnTeachView.Size = new System.Drawing.Size(121, 52);
+            this.btnTeachView.Size = new System.Drawing.Size(101, 33);
             this.btnTeachView.TabIndex = 1;
             this.btnTeachView.Text = "Teacher";
             this.btnTeachView.UseVisualStyleBackColor = true;
@@ -147,9 +225,9 @@
             // 
             // btnStudentView
             // 
-            this.btnStudentView.Location = new System.Drawing.Point(144, 114);
+            this.btnStudentView.Location = new System.Drawing.Point(193, 162);
             this.btnStudentView.Name = "btnStudentView";
-            this.btnStudentView.Size = new System.Drawing.Size(121, 52);
+            this.btnStudentView.Size = new System.Drawing.Size(101, 34);
             this.btnStudentView.TabIndex = 0;
             this.btnStudentView.Text = "Student";
             this.btnStudentView.UseVisualStyleBackColor = true;
@@ -166,16 +244,73 @@
             // 
             // s_tabCntrl
             // 
-            this.s_tabCntrl.Controls.Add(this.s_tabUpload);
-            this.s_tabCntrl.Controls.Add(this.s_tabGrades);
-            this.s_tabCntrl.Controls.Add(this.s_tabAssignments);
             this.s_tabCntrl.Controls.Add(this.s_tabHome);
+            this.s_tabCntrl.Controls.Add(this.s_tabUpload);
+            this.s_tabCntrl.Controls.Add(this.s_tabAssignments);
+            this.s_tabCntrl.Controls.Add(this.s_tabGrades);
             this.s_tabCntrl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.s_tabCntrl.Location = new System.Drawing.Point(0, 0);
             this.s_tabCntrl.Name = "s_tabCntrl";
             this.s_tabCntrl.SelectedIndex = 0;
             this.s_tabCntrl.Size = new System.Drawing.Size(675, 434);
             this.s_tabCntrl.TabIndex = 0;
+            // 
+            // s_tabHome
+            // 
+            this.s_tabHome.Controls.Add(this.button3);
+            this.s_tabHome.Controls.Add(this.button2);
+            this.s_tabHome.Controls.Add(this.button1);
+            this.s_tabHome.Controls.Add(this.label1);
+            this.s_tabHome.Location = new System.Drawing.Point(4, 22);
+            this.s_tabHome.Name = "s_tabHome";
+            this.s_tabHome.Padding = new System.Windows.Forms.Padding(3);
+            this.s_tabHome.Size = new System.Drawing.Size(667, 408);
+            this.s_tabHome.TabIndex = 0;
+            this.s_tabHome.Text = "Home";
+            this.s_tabHome.UseVisualStyleBackColor = true;
+            this.s_tabHome.Click += new System.EventHandler(this.s_tabHome_Click);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(236, 193);
+            this.button3.Name = "button3";
+            this.button3.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.button3.Size = new System.Drawing.Size(157, 37);
+            this.button3.TabIndex = 5;
+            this.button3.Text = "View Assignments";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(236, 150);
+            this.button2.Name = "button2";
+            this.button2.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.button2.Size = new System.Drawing.Size(157, 37);
+            this.button2.TabIndex = 4;
+            this.button2.Text = "View Grades";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(236, 107);
+            this.button1.Name = "button1";
+            this.button1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.button1.Size = new System.Drawing.Size(157, 37);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Upload Assignment";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(257, 69);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(106, 20);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Hello Student";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // s_tabUpload
             // 
@@ -252,6 +387,7 @@
             this.s_cmboUploadAssignment.Name = "s_cmboUploadAssignment";
             this.s_cmboUploadAssignment.Size = new System.Drawing.Size(171, 21);
             this.s_cmboUploadAssignment.TabIndex = 6;
+            this.s_cmboUploadAssignment.SelectedIndexChanged += new System.EventHandler(this.s_cmboUploadAssignment_SelectedIndexChanged);
             // 
             // s_cmboUploadClass
             // 
@@ -260,6 +396,7 @@
             this.s_cmboUploadClass.Name = "s_cmboUploadClass";
             this.s_cmboUploadClass.Size = new System.Drawing.Size(171, 21);
             this.s_cmboUploadClass.TabIndex = 5;
+            this.s_cmboUploadClass.SelectedIndexChanged += new System.EventHandler(this.s_cmboUploadClass_SelectedIndexChanged);
             // 
             // s_btnSelect
             // 
@@ -271,6 +408,64 @@
             this.s_btnSelect.Text = "Select File";
             this.s_btnSelect.UseVisualStyleBackColor = true;
             this.s_btnSelect.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // s_tabAssignments
+            // 
+            this.s_tabAssignments.Controls.Add(this.panel4);
+            this.s_tabAssignments.Controls.Add(this.label22);
+            this.s_tabAssignments.Controls.Add(this.listView4);
+            this.s_tabAssignments.Location = new System.Drawing.Point(4, 22);
+            this.s_tabAssignments.Name = "s_tabAssignments";
+            this.s_tabAssignments.Padding = new System.Windows.Forms.Padding(3);
+            this.s_tabAssignments.Size = new System.Drawing.Size(667, 408);
+            this.s_tabAssignments.TabIndex = 3;
+            this.s_tabAssignments.Text = "Assignments";
+            this.s_tabAssignments.UseVisualStyleBackColor = true;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel4.Controls.Add(this.label23);
+            this.panel4.Controls.Add(this.s_rchAssignmentInstructions);
+            this.panel4.Location = new System.Drawing.Point(290, 44);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(325, 231);
+            this.panel4.TabIndex = 10;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(3, 8);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(61, 13);
+            this.label23.TabIndex = 12;
+            this.label23.Text = "Instructions";
+            // 
+            // s_rchAssignmentInstructions
+            // 
+            this.s_rchAssignmentInstructions.Location = new System.Drawing.Point(6, 24);
+            this.s_rchAssignmentInstructions.Name = "s_rchAssignmentInstructions";
+            this.s_rchAssignmentInstructions.Size = new System.Drawing.Size(178, 204);
+            this.s_rchAssignmentInstructions.TabIndex = 11;
+            this.s_rchAssignmentInstructions.Text = "";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Location = new System.Drawing.Point(22, 20);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(46, 16);
+            this.label22.TabIndex = 4;
+            this.label22.Text = "To Do";
+            // 
+            // listView4
+            // 
+            this.listView4.Location = new System.Drawing.Point(25, 43);
+            this.listView4.Name = "listView4";
+            this.listView4.Size = new System.Drawing.Size(182, 232);
+            this.listView4.TabIndex = 1;
+            this.listView4.UseCompatibleStateImageBehavior = false;
             // 
             // s_tabGrades
             // 
@@ -286,6 +481,34 @@
             this.s_tabGrades.Text = "Grades";
             this.s_tabGrades.UseVisualStyleBackColor = true;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(12, 73);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(78, 16);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "Assignment";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(12, 20);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(42, 16);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Class";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(15, 43);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(132, 21);
+            this.comboBox1.TabIndex = 2;
+            // 
             // s_listGrades
             // 
             this.s_listGrades.Location = new System.Drawing.Point(15, 92);
@@ -293,77 +516,6 @@
             this.s_listGrades.Size = new System.Drawing.Size(261, 301);
             this.s_listGrades.TabIndex = 1;
             this.s_listGrades.UseCompatibleStateImageBehavior = false;
-            // 
-            // s_tabAssignments
-            // 
-            this.s_tabAssignments.Controls.Add(this.listView5);
-            this.s_tabAssignments.Controls.Add(this.label23);
-            this.s_tabAssignments.Controls.Add(this.label22);
-            this.s_tabAssignments.Controls.Add(this.listView4);
-            this.s_tabAssignments.Location = new System.Drawing.Point(4, 22);
-            this.s_tabAssignments.Name = "s_tabAssignments";
-            this.s_tabAssignments.Padding = new System.Windows.Forms.Padding(3);
-            this.s_tabAssignments.Size = new System.Drawing.Size(667, 408);
-            this.s_tabAssignments.TabIndex = 3;
-            this.s_tabAssignments.Text = "Assignments";
-            this.s_tabAssignments.UseVisualStyleBackColor = true;
-            // 
-            // s_tabHome
-            // 
-            this.s_tabHome.Controls.Add(this.button3);
-            this.s_tabHome.Controls.Add(this.button2);
-            this.s_tabHome.Controls.Add(this.button1);
-            this.s_tabHome.Controls.Add(this.label1);
-            this.s_tabHome.Location = new System.Drawing.Point(4, 22);
-            this.s_tabHome.Name = "s_tabHome";
-            this.s_tabHome.Padding = new System.Windows.Forms.Padding(3);
-            this.s_tabHome.Size = new System.Drawing.Size(667, 408);
-            this.s_tabHome.TabIndex = 0;
-            this.s_tabHome.Text = "Home";
-            this.s_tabHome.UseVisualStyleBackColor = true;
-            this.s_tabHome.Click += new System.EventHandler(this.s_tabHome_Click);
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(236, 193);
-            this.button3.Name = "button3";
-            this.button3.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.button3.Size = new System.Drawing.Size(157, 37);
-            this.button3.TabIndex = 5;
-            this.button3.Text = "View Assignments";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(236, 150);
-            this.button2.Name = "button2";
-            this.button2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.button2.Size = new System.Drawing.Size(157, 37);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "View Grades";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(236, 107);
-            this.button1.Name = "button1";
-            this.button1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.button1.Size = new System.Drawing.Size(157, 37);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Upload Assignment";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(257, 69);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(106, 20);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Hello Student";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // s_fileSelector
             // 
@@ -439,15 +591,6 @@
             this.label6.TabIndex = 2;
             this.label6.Text = "Hello Teacher";
             // 
-            // pnlTeacher
-            // 
-            this.pnlTeacher.Controls.Add(this.t_tabCntrlTeacher);
-            this.pnlTeacher.Location = new System.Drawing.Point(12, 15);
-            this.pnlTeacher.Name = "pnlTeacher";
-            this.pnlTeacher.Size = new System.Drawing.Size(675, 434);
-            this.pnlTeacher.TabIndex = 3;
-            this.pnlTeacher.Visible = false;
-            // 
             // t_tabGrade
             // 
             this.t_tabGrade.Controls.Add(this.panel1);
@@ -466,60 +609,6 @@
             this.t_tabGrade.UseVisualStyleBackColor = true;
             this.t_tabGrade.Click += new System.EventHandler(this.t_tabOverview_Click);
             // 
-            // t_lstClassOverview
-            // 
-            this.t_lstClassOverview.Location = new System.Drawing.Point(6, 40);
-            this.t_lstClassOverview.Name = "t_lstClassOverview";
-            this.t_lstClassOverview.Size = new System.Drawing.Size(141, 245);
-            this.t_lstClassOverview.TabIndex = 0;
-            this.t_lstClassOverview.UseCompatibleStateImageBehavior = false;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(6, 17);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(48, 20);
-            this.label7.TabIndex = 1;
-            this.label7.Text = "Class";
-            // 
-            // t_lstStudentOverview
-            // 
-            this.t_lstStudentOverview.Location = new System.Drawing.Point(162, 40);
-            this.t_lstStudentOverview.Name = "t_lstStudentOverview";
-            this.t_lstStudentOverview.Size = new System.Drawing.Size(141, 245);
-            this.t_lstStudentOverview.TabIndex = 2;
-            this.t_lstStudentOverview.UseCompatibleStateImageBehavior = false;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(167, 17);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(66, 20);
-            this.label8.TabIndex = 3;
-            this.label8.Text = "Student";
-            // 
-            // t_lstAssignmentOverview
-            // 
-            this.t_lstAssignmentOverview.Location = new System.Drawing.Point(319, 40);
-            this.t_lstAssignmentOverview.Name = "t_lstAssignmentOverview";
-            this.t_lstAssignmentOverview.Size = new System.Drawing.Size(141, 245);
-            this.t_lstAssignmentOverview.TabIndex = 4;
-            this.t_lstAssignmentOverview.UseCompatibleStateImageBehavior = false;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(325, 17);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(93, 20);
-            this.label9.TabIndex = 5;
-            this.label9.Text = "Assignment";
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -536,6 +625,62 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(174, 362);
             this.panel1.TabIndex = 8;
+            // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Location = new System.Drawing.Point(3, 13);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(132, 13);
+            this.linkLabel1.TabIndex = 15;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Submission Link (Dropbox)";
+            // 
+            // t_btnGradeChangeCancel
+            // 
+            this.t_btnGradeChangeCancel.Location = new System.Drawing.Point(6, 295);
+            this.t_btnGradeChangeCancel.Name = "t_btnGradeChangeCancel";
+            this.t_btnGradeChangeCancel.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.t_btnGradeChangeCancel.Size = new System.Drawing.Size(69, 24);
+            this.t_btnGradeChangeCancel.TabIndex = 14;
+            this.t_btnGradeChangeCancel.Text = "Cancel";
+            this.t_btnGradeChangeCancel.UseVisualStyleBackColor = true;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(3, 119);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(59, 13);
+            this.label11.TabIndex = 13;
+            this.label11.Text = "Comments:";
+            // 
+            // richTextBox2
+            // 
+            this.richTextBox2.Location = new System.Drawing.Point(6, 135);
+            this.richTextBox2.Name = "richTextBox2";
+            this.richTextBox2.Size = new System.Drawing.Size(158, 154);
+            this.richTextBox2.TabIndex = 12;
+            this.richTextBox2.Text = "";
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(6, 90);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(123, 17);
+            this.checkBox1.TabIndex = 10;
+            this.checkBox1.Text = "Turned in late (-10%)";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(3, 48);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(36, 13);
+            this.label10.TabIndex = 8;
+            this.label10.Text = "Grade";
             // 
             // t_btnGradeChangeSave
             // 
@@ -554,51 +699,59 @@
             this.textBox1.Size = new System.Drawing.Size(98, 20);
             this.textBox1.TabIndex = 7;
             // 
-            // label10
+            // label9
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(3, 48);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(36, 13);
-            this.label10.TabIndex = 8;
-            this.label10.Text = "Grade";
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(325, 17);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(93, 20);
+            this.label9.TabIndex = 5;
+            this.label9.Text = "Assignment";
             // 
-            // checkBox1
+            // t_lstAssignmentOverview
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(6, 90);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(123, 17);
-            this.checkBox1.TabIndex = 10;
-            this.checkBox1.Text = "Turned in late (-10%)";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.t_lstAssignmentOverview.Location = new System.Drawing.Point(319, 40);
+            this.t_lstAssignmentOverview.Name = "t_lstAssignmentOverview";
+            this.t_lstAssignmentOverview.Size = new System.Drawing.Size(141, 245);
+            this.t_lstAssignmentOverview.TabIndex = 4;
+            this.t_lstAssignmentOverview.UseCompatibleStateImageBehavior = false;
             // 
-            // richTextBox2
+            // label8
             // 
-            this.richTextBox2.Location = new System.Drawing.Point(6, 135);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(158, 154);
-            this.richTextBox2.TabIndex = 12;
-            this.richTextBox2.Text = "";
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(167, 17);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(66, 20);
+            this.label8.TabIndex = 3;
+            this.label8.Text = "Student";
             // 
-            // label11
+            // t_lstStudentOverview
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(3, 119);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(59, 13);
-            this.label11.TabIndex = 13;
-            this.label11.Text = "Comments:";
+            this.t_lstStudentOverview.Location = new System.Drawing.Point(162, 40);
+            this.t_lstStudentOverview.Name = "t_lstStudentOverview";
+            this.t_lstStudentOverview.Size = new System.Drawing.Size(141, 245);
+            this.t_lstStudentOverview.TabIndex = 2;
+            this.t_lstStudentOverview.UseCompatibleStateImageBehavior = false;
             // 
-            // t_btnGradeChangeCancel
+            // label7
             // 
-            this.t_btnGradeChangeCancel.Location = new System.Drawing.Point(6, 295);
-            this.t_btnGradeChangeCancel.Name = "t_btnGradeChangeCancel";
-            this.t_btnGradeChangeCancel.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.t_btnGradeChangeCancel.Size = new System.Drawing.Size(69, 24);
-            this.t_btnGradeChangeCancel.TabIndex = 14;
-            this.t_btnGradeChangeCancel.Text = "Cancel";
-            this.t_btnGradeChangeCancel.UseVisualStyleBackColor = true;
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(6, 17);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(48, 20);
+            this.label7.TabIndex = 1;
+            this.label7.Text = "Class";
+            // 
+            // t_lstClassOverview
+            // 
+            this.t_lstClassOverview.Location = new System.Drawing.Point(6, 40);
+            this.t_lstClassOverview.Name = "t_lstClassOverview";
+            this.t_lstClassOverview.Size = new System.Drawing.Size(141, 245);
+            this.t_lstClassOverview.TabIndex = 0;
+            this.t_lstClassOverview.UseCompatibleStateImageBehavior = false;
             // 
             // t_tabCreateAssignment
             // 
@@ -615,23 +768,25 @@
             this.t_tabCreateAssignment.Text = "Assignment Creator";
             this.t_tabCreateAssignment.UseVisualStyleBackColor = true;
             // 
-            // t_cmboClassCreate
+            // t_btnCreateAssignment
             // 
-            this.t_cmboClassCreate.FormattingEnabled = true;
-            this.t_cmboClassCreate.Location = new System.Drawing.Point(6, 35);
-            this.t_cmboClassCreate.Name = "t_cmboClassCreate";
-            this.t_cmboClassCreate.Size = new System.Drawing.Size(163, 21);
-            this.t_cmboClassCreate.TabIndex = 0;
+            this.t_btnCreateAssignment.Location = new System.Drawing.Point(21, 301);
+            this.t_btnCreateAssignment.Name = "t_btnCreateAssignment";
+            this.t_btnCreateAssignment.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.t_btnCreateAssignment.Size = new System.Drawing.Size(157, 37);
+            this.t_btnCreateAssignment.TabIndex = 11;
+            this.t_btnCreateAssignment.Text = "Create Assignment";
+            this.t_btnCreateAssignment.UseVisualStyleBackColor = true;
             // 
-            // label12
+            // t_btnDiscardAssignment
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(6, 12);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(48, 20);
-            this.label12.TabIndex = 2;
-            this.label12.Text = "Class";
+            this.t_btnDiscardAssignment.Location = new System.Drawing.Point(21, 359);
+            this.t_btnDiscardAssignment.Name = "t_btnDiscardAssignment";
+            this.t_btnDiscardAssignment.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.t_btnDiscardAssignment.Size = new System.Drawing.Size(157, 37);
+            this.t_btnDiscardAssignment.TabIndex = 10;
+            this.t_btnDiscardAssignment.Text = "Discard Assignment";
+            this.t_btnDiscardAssignment.UseVisualStyleBackColor = true;
             // 
             // panel2
             // 
@@ -651,51 +806,22 @@
             this.panel2.Size = new System.Drawing.Size(443, 364);
             this.panel2.TabIndex = 9;
             // 
-            // label14
+            // label17
             // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(10, 11);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(95, 13);
-            this.label14.TabIndex = 8;
-            this.label14.Text = "Assignment Name:";
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(10, 109);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(115, 13);
+            this.label17.TabIndex = 23;
+            this.label17.Text = "Instructions/Comments";
             // 
-            // t_txtAssignmentName
+            // t_rchAssignmentComments
             // 
-            this.t_txtAssignmentName.Location = new System.Drawing.Point(13, 27);
-            this.t_txtAssignmentName.Name = "t_txtAssignmentName";
-            this.t_txtAssignmentName.Size = new System.Drawing.Size(98, 20);
-            this.t_txtAssignmentName.TabIndex = 7;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(201, 3);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(44, 13);
-            this.label15.TabIndex = 16;
-            this.label15.Text = "Due On";
-            // 
-            // t_calAssignmentDue
-            // 
-            this.t_calAssignmentDue.Location = new System.Drawing.Point(204, 19);
-            this.t_calAssignmentDue.Name = "t_calAssignmentDue";
-            this.t_calAssignmentDue.TabIndex = 17;
-            // 
-            // t_calAssignmentAvail
-            // 
-            this.t_calAssignmentAvail.Location = new System.Drawing.Point(204, 199);
-            this.t_calAssignmentAvail.Name = "t_calAssignmentAvail";
-            this.t_calAssignmentAvail.TabIndex = 19;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(201, 177);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(67, 13);
-            this.label13.TabIndex = 18;
-            this.label13.Text = "Available On";
+            this.t_rchAssignmentComments.Location = new System.Drawing.Point(14, 125);
+            this.t_rchAssignmentComments.Name = "t_rchAssignmentComments";
+            this.t_rchAssignmentComments.Size = new System.Drawing.Size(178, 225);
+            this.t_rchAssignmentComments.TabIndex = 22;
+            this.t_rchAssignmentComments.Text = "";
             // 
             // label16
             // 
@@ -713,42 +839,69 @@
             this.t_txtAssignmentPoints.Size = new System.Drawing.Size(98, 20);
             this.t_txtAssignmentPoints.TabIndex = 20;
             // 
-            // t_rchAssignmentComments
+            // t_calAssignmentAvail
             // 
-            this.t_rchAssignmentComments.Location = new System.Drawing.Point(14, 125);
-            this.t_rchAssignmentComments.Name = "t_rchAssignmentComments";
-            this.t_rchAssignmentComments.Size = new System.Drawing.Size(178, 225);
-            this.t_rchAssignmentComments.TabIndex = 22;
-            this.t_rchAssignmentComments.Text = "";
+            this.t_calAssignmentAvail.Location = new System.Drawing.Point(204, 199);
+            this.t_calAssignmentAvail.Name = "t_calAssignmentAvail";
+            this.t_calAssignmentAvail.TabIndex = 19;
             // 
-            // label17
+            // label13
             // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(10, 109);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(115, 13);
-            this.label17.TabIndex = 23;
-            this.label17.Text = "Instructions/Comments";
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(201, 177);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(67, 13);
+            this.label13.TabIndex = 18;
+            this.label13.Text = "Available On";
             // 
-            // t_btnDiscardAssignment
+            // t_calAssignmentDue
             // 
-            this.t_btnDiscardAssignment.Location = new System.Drawing.Point(21, 359);
-            this.t_btnDiscardAssignment.Name = "t_btnDiscardAssignment";
-            this.t_btnDiscardAssignment.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.t_btnDiscardAssignment.Size = new System.Drawing.Size(157, 37);
-            this.t_btnDiscardAssignment.TabIndex = 10;
-            this.t_btnDiscardAssignment.Text = "Discard Assignment";
-            this.t_btnDiscardAssignment.UseVisualStyleBackColor = true;
+            this.t_calAssignmentDue.Location = new System.Drawing.Point(204, 19);
+            this.t_calAssignmentDue.Name = "t_calAssignmentDue";
+            this.t_calAssignmentDue.TabIndex = 17;
             // 
-            // t_btnCreateAssignment
+            // label15
             // 
-            this.t_btnCreateAssignment.Location = new System.Drawing.Point(21, 301);
-            this.t_btnCreateAssignment.Name = "t_btnCreateAssignment";
-            this.t_btnCreateAssignment.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.t_btnCreateAssignment.Size = new System.Drawing.Size(157, 37);
-            this.t_btnCreateAssignment.TabIndex = 11;
-            this.t_btnCreateAssignment.Text = "Create Assignment";
-            this.t_btnCreateAssignment.UseVisualStyleBackColor = true;
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(201, 3);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(44, 13);
+            this.label15.TabIndex = 16;
+            this.label15.Text = "Due On";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(10, 11);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(95, 13);
+            this.label14.TabIndex = 8;
+            this.label14.Text = "Assignment Name:";
+            // 
+            // t_txtAssignmentName
+            // 
+            this.t_txtAssignmentName.Location = new System.Drawing.Point(13, 27);
+            this.t_txtAssignmentName.Name = "t_txtAssignmentName";
+            this.t_txtAssignmentName.Size = new System.Drawing.Size(98, 20);
+            this.t_txtAssignmentName.TabIndex = 7;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(6, 12);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(48, 20);
+            this.label12.TabIndex = 2;
+            this.label12.Text = "Class";
+            // 
+            // t_cmboClassCreate
+            // 
+            this.t_cmboClassCreate.FormattingEnabled = true;
+            this.t_cmboClassCreate.Location = new System.Drawing.Point(6, 35);
+            this.t_cmboClassCreate.Name = "t_cmboClassCreate";
+            this.t_cmboClassCreate.Size = new System.Drawing.Size(163, 21);
+            this.t_cmboClassCreate.TabIndex = 0;
             // 
             // t_tabClassOverview
             // 
@@ -764,6 +917,58 @@
             this.t_tabClassOverview.TabIndex = 4;
             this.t_tabClassOverview.Text = "Class Overview";
             this.t_tabClassOverview.UseVisualStyleBackColor = true;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel3.Controls.Add(this.t_lblStudentGrade);
+            this.panel3.Controls.Add(this.t_lblClassGrade);
+            this.panel3.Controls.Add(this.label21);
+            this.panel3.Controls.Add(this.label20);
+            this.panel3.Location = new System.Drawing.Point(369, 38);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(268, 245);
+            this.panel3.TabIndex = 9;
+            // 
+            // t_lblStudentGrade
+            // 
+            this.t_lblStudentGrade.AutoSize = true;
+            this.t_lblStudentGrade.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.t_lblStudentGrade.Location = new System.Drawing.Point(111, 36);
+            this.t_lblStudentGrade.Name = "t_lblStudentGrade";
+            this.t_lblStudentGrade.Size = new System.Drawing.Size(78, 16);
+            this.t_lblStudentGrade.TabIndex = 11;
+            this.t_lblStudentGrade.Text = "__________";
+            // 
+            // t_lblClassGrade
+            // 
+            this.t_lblClassGrade.AutoSize = true;
+            this.t_lblClassGrade.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.t_lblClassGrade.Location = new System.Drawing.Point(127, 8);
+            this.t_lblClassGrade.Name = "t_lblClassGrade";
+            this.t_lblClassGrade.Size = new System.Drawing.Size(78, 16);
+            this.t_lblClassGrade.TabIndex = 10;
+            this.t_lblClassGrade.Text = "__________";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(8, 36);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(97, 16);
+            this.label21.TabIndex = 9;
+            this.label21.Text = "Student Grade:";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(8, 8);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(113, 16);
+            this.label20.TabIndex = 8;
+            this.label20.Text = "Class Avg Grade:";
             // 
             // label18
             // 
@@ -801,131 +1006,14 @@
             this.listView2.TabIndex = 4;
             this.listView2.UseCompatibleStateImageBehavior = false;
             // 
-            // label20
+            // pnlTeacher
             // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(8, 8);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(113, 16);
-            this.label20.TabIndex = 8;
-            this.label20.Text = "Class Avg Grade:";
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel3.Controls.Add(this.t_lblStudentGrade);
-            this.panel3.Controls.Add(this.t_lblClassGrade);
-            this.panel3.Controls.Add(this.label21);
-            this.panel3.Controls.Add(this.label20);
-            this.panel3.Location = new System.Drawing.Point(369, 38);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(268, 245);
-            this.panel3.TabIndex = 9;
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(8, 36);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(97, 16);
-            this.label21.TabIndex = 9;
-            this.label21.Text = "Student Grade:";
-            // 
-            // t_lblClassGrade
-            // 
-            this.t_lblClassGrade.AutoSize = true;
-            this.t_lblClassGrade.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.t_lblClassGrade.Location = new System.Drawing.Point(127, 8);
-            this.t_lblClassGrade.Name = "t_lblClassGrade";
-            this.t_lblClassGrade.Size = new System.Drawing.Size(78, 16);
-            this.t_lblClassGrade.TabIndex = 10;
-            this.t_lblClassGrade.Text = "__________";
-            // 
-            // t_lblStudentGrade
-            // 
-            this.t_lblStudentGrade.AutoSize = true;
-            this.t_lblStudentGrade.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.t_lblStudentGrade.Location = new System.Drawing.Point(111, 36);
-            this.t_lblStudentGrade.Name = "t_lblStudentGrade";
-            this.t_lblStudentGrade.Size = new System.Drawing.Size(78, 16);
-            this.t_lblStudentGrade.TabIndex = 11;
-            this.t_lblStudentGrade.Text = "__________";
-            // 
-            // linkLabel1
-            // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(3, 13);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(132, 13);
-            this.linkLabel1.TabIndex = 15;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Submission Link (Dropbox)";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(15, 43);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(132, 21);
-            this.comboBox1.TabIndex = 2;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(12, 20);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(42, 16);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Class";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(12, 73);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(78, 16);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Assignment";
-            // 
-            // listView4
-            // 
-            this.listView4.Location = new System.Drawing.Point(25, 43);
-            this.listView4.Name = "listView4";
-            this.listView4.Size = new System.Drawing.Size(182, 232);
-            this.listView4.TabIndex = 1;
-            this.listView4.UseCompatibleStateImageBehavior = false;
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(22, 20);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(46, 16);
-            this.label22.TabIndex = 4;
-            this.label22.Text = "To Do";
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(239, 24);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(68, 16);
-            this.label23.TabIndex = 5;
-            this.label23.Text = "Submitted";
-            // 
-            // listView5
-            // 
-            this.listView5.Location = new System.Drawing.Point(242, 43);
-            this.listView5.Name = "listView5";
-            this.listView5.Size = new System.Drawing.Size(182, 232);
-            this.listView5.TabIndex = 6;
-            this.listView5.UseCompatibleStateImageBehavior = false;
+            this.pnlTeacher.Controls.Add(this.t_tabCntrlTeacher);
+            this.pnlTeacher.Location = new System.Drawing.Point(12, 15);
+            this.pnlTeacher.Name = "pnlTeacher";
+            this.pnlTeacher.Size = new System.Drawing.Size(675, 434);
+            this.pnlTeacher.TabIndex = 3;
+            this.pnlTeacher.Visible = false;
             // 
             // frmApp
             // 
@@ -938,22 +1026,25 @@
             this.Name = "frmApp";
             this.Text = "Music Teacher Application";
             this.Load += new System.EventHandler(this.frmApp_Load);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.frmApp_KeyPress);
             this.pnlLogin.ResumeLayout(false);
+            this.pnlLogin.PerformLayout();
             this.pnlStudent.ResumeLayout(false);
             this.s_tabCntrl.ResumeLayout(false);
+            this.s_tabHome.ResumeLayout(false);
+            this.s_tabHome.PerformLayout();
             this.s_tabUpload.ResumeLayout(false);
             this.s_tabUpload.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.s_picThumbnail)).EndInit();
-            this.s_tabGrades.ResumeLayout(false);
-            this.s_tabGrades.PerformLayout();
             this.s_tabAssignments.ResumeLayout(false);
             this.s_tabAssignments.PerformLayout();
-            this.s_tabHome.ResumeLayout(false);
-            this.s_tabHome.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            this.s_tabGrades.ResumeLayout(false);
+            this.s_tabGrades.PerformLayout();
             this.t_tabCntrlTeacher.ResumeLayout(false);
             this.t_tabHome.ResumeLayout(false);
             this.t_tabHome.PerformLayout();
-            this.pnlTeacher.ResumeLayout(false);
             this.t_tabGrade.ResumeLayout(false);
             this.t_tabGrade.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -966,6 +1057,7 @@
             this.t_tabClassOverview.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.pnlTeacher.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1047,10 +1139,18 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ListView listView5;
-        private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.ListView listView4;
+        private System.Windows.Forms.Button btn_Login;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.RichTextBox s_rchAssignmentInstructions;
     }
 }
 

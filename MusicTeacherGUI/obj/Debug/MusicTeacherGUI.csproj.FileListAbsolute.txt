@@ -21,3 +21,7 @@ C:\Users\Nathaniel\source\repos\ClassLibrary1\MusicTeacherGUI\bin\Debug\ClassLib
 C:\Users\Nathaniel\source\repos\ClassLibrary1\MusicTeacherGUI\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\Nathaniel\source\repos\ClassLibrary1\MusicTeacherGUI\bin\Debug\System.Text.Encodings.Web.xml
 C:\Users\Nathaniel\source\repos\ClassLibrary1\MusicTeacherGUI\bin\Debug\MediaToolkit.dll
+C:\Users\Nathaniel\source\repos\ClassLibrary1\MusicTeacherGUI\bin\Debug\Dropbox.Api.dll
+C:\Users\Nathaniel\source\repos\ClassLibrary1\MusicTeacherGUI\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Nathaniel\source\repos\ClassLibrary1\MusicTeacherGUI\bin\Debug\Dropbox.Api.xml
+C:\Users\Nathaniel\source\repos\ClassLibrary1\MusicTeacherGUI\bin\Debug\Newtonsoft.Json.xml

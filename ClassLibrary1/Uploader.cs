@@ -6,6 +6,7 @@ using System.IO;
 using System.Threading.Tasks;
 
 using Dropbox;
+using Dropbox.Api.Sharing;
 using MediaToolkit;
 using MediaToolkit.Options;
 using MediaToolkit.Model;
@@ -16,10 +17,12 @@ namespace DropboxUpload
     {
         public Uploader()
         {
-
+            
         }
 
-        private DropboxClient client;
+        private Dropbox.DropboxClient client;
+
+
 
         public Action<string> getProgress()
         {
@@ -48,7 +51,32 @@ namespace DropboxUpload
             // Start the upload
             PutFileResult res = await client.UploadFileAsync(req, stream, Credentials.apiKey);
 
+            string fileNameUploaded = Path.GetFileName(sourcePath);
+
+            
+
+            createLink(res.PathLower, res.Id, fileNameUploaded);
+
             Console.WriteLine("Upload finished");
+
+        }
+
+        public void createLink( string dropboxLocalPath, string fileID, string fileNameUploaded )
+        {
+            Console.WriteLine("CREATE LINK");
+
+            SharedLinkMetadata data = new SharedLinkMetadata();
+
+            CreateSharedLinkArg a = new CreateSharedLinkArg(dropboxLocalPath);
+
+            // Intellisense doesn't know what arguments go in this function and it won't run with zero args
+            // The dropbox api doesn't have any arguments for this class's constructor
+            //SharingUserRoutes route = new SharingUserRoutes();
+
+            //route.BeginGetSharedLinkFile(
+
+            Console.WriteLine("URL: " + data.Url);
+            Console.WriteLine("Short URL: " + a.ShortUrl);
 
         }
 

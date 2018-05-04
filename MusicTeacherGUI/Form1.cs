@@ -32,6 +32,8 @@ namespace MusicTeacherGUI
 
         private Uploader studentUploader = new Uploader();
 
+        private char guiView;
+
         public frmApp()
         {
             InitializeComponent();
@@ -44,18 +46,45 @@ namespace MusicTeacherGUI
 
         }
 
+        private void frmApp_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            
+        }
+
         private void btnStudentView_Click(object sender, EventArgs e)
         {
-            pnlLogin.Visible = false;
-            pnlTeacher.Visible = false;
-            pnlStudent.Visible = true;
+            guiView = 's';
+            btn_Login.Text = "Login as a Student";
+            btnStudentView.Enabled = false;
+            btnTeachView.Enabled = true;
         }
 
         private void btnTeachView_Click(object sender, EventArgs e)
         {
-            pnlLogin.Visible = false;
-            pnlStudent.Visible = false;
-            pnlTeacher.Visible = true;
+            guiView = 't';
+            btn_Login.Text = "Login as a Teacher";
+            btnTeachView.Enabled = false;
+            btnStudentView.Enabled = true;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if (guiView == 's')
+            {
+                pnlLogin.Visible = false;
+                pnlTeacher.Visible = false;
+                pnlStudent.Visible = true;
+            }
+            else if (guiView == 't')
+            {
+                pnlLogin.Visible = false;
+                pnlStudent.Visible = false;
+                pnlTeacher.Visible = true;
+            }
+
+            btnTeachView.Enabled = true;
+            btnStudentView.Enabled = true;
+
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -148,6 +177,17 @@ namespace MusicTeacherGUI
         private void t_btnGrade_Click(object sender, EventArgs e)
         {
             t_tabCntrlTeacher.SelectedTab = t_tabGrade;
+        }
+
+        private void s_cmboUploadClass_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // When we select a class, populate the assignments dropdown
+            //s_cmboUploadAssignment
+        }
+
+        private void s_cmboUploadAssignment_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // When we select a class and assignment, we are now good to go for the submit
         }
     }
 }
