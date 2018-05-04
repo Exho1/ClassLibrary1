@@ -85,6 +85,8 @@ namespace MusicTeacherGUI
             btnTeachView.Enabled = true;
             btnStudentView.Enabled = true;
 
+            // Pull the necessary info from the database
+            //txtUsername;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -138,12 +140,6 @@ namespace MusicTeacherGUI
         {
             s_tabCntrl.SelectedTab = s_tabUpload;
         }
-
-        private void s_tabHome_Click(object sender, EventArgs e)
-        {
-
-        }
-
 
         private async void s_btnFile_ClickAsync(object sender, EventArgs e)
         {

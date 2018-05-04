@@ -32,10 +32,10 @@
             this.btn_Login = new System.Windows.Forms.Button();
             this.label27 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.mtxtPassword = new System.Windows.Forms.MaskedTextBox();
             this.label25 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtUsername = new System.Windows.Forms.TextBox();
             this.btnTeachView = new System.Windows.Forms.Button();
             this.btnStudentView = new System.Windows.Forms.Button();
             this.pnlStudent = new System.Windows.Forms.Panel();
@@ -140,10 +140,10 @@
             this.pnlLogin.Controls.Add(this.btn_Login);
             this.pnlLogin.Controls.Add(this.label27);
             this.pnlLogin.Controls.Add(this.label26);
-            this.pnlLogin.Controls.Add(this.maskedTextBox1);
+            this.pnlLogin.Controls.Add(this.mtxtPassword);
             this.pnlLogin.Controls.Add(this.label25);
             this.pnlLogin.Controls.Add(this.label24);
-            this.pnlLogin.Controls.Add(this.textBox2);
+            this.pnlLogin.Controls.Add(this.txtUsername);
             this.pnlLogin.Controls.Add(this.btnTeachView);
             this.pnlLogin.Controls.Add(this.btnStudentView);
             this.pnlLogin.Location = new System.Drawing.Point(12, 12);
@@ -180,12 +180,12 @@
             this.label26.TabIndex = 6;
             this.label26.Text = "Password";
             // 
-            // maskedTextBox1
+            // mtxtPassword
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(375, 172);
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(134, 20);
-            this.maskedTextBox1.TabIndex = 5;
+            this.mtxtPassword.Location = new System.Drawing.Point(375, 172);
+            this.mtxtPassword.Name = "mtxtPassword";
+            this.mtxtPassword.Size = new System.Drawing.Size(134, 20);
+            this.mtxtPassword.TabIndex = 5;
             // 
             // label25
             // 
@@ -206,12 +206,12 @@
             this.label24.TabIndex = 3;
             this.label24.Text = "Placeholder Login Page";
             // 
-            // textBox2
+            // txtUsername
             // 
-            this.textBox2.Location = new System.Drawing.Point(375, 128);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(134, 20);
-            this.textBox2.TabIndex = 2;
+            this.txtUsername.Location = new System.Drawing.Point(375, 128);
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Size = new System.Drawing.Size(134, 20);
+            this.txtUsername.TabIndex = 2;
             // 
             // btnTeachView
             // 
@@ -268,7 +268,6 @@
             this.s_tabHome.TabIndex = 0;
             this.s_tabHome.Text = "Home";
             this.s_tabHome.UseVisualStyleBackColor = true;
-            this.s_tabHome.Click += new System.EventHandler(this.s_tabHome_Click);
             // 
             // button3
             // 
@@ -1020,9 +1019,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(699, 458);
+            this.Controls.Add(this.pnlLogin);
             this.Controls.Add(this.pnlStudent);
             this.Controls.Add(this.pnlTeacher);
-            this.Controls.Add(this.pnlLogin);
             this.Name = "frmApp";
             this.Text = "Music Teacher Application";
             this.Load += new System.EventHandler(this.frmApp_Load);
@@ -1144,10 +1143,10 @@
         private System.Windows.Forms.Button btn_Login;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.MaskedTextBox mtxtPassword;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.RichTextBox s_rchAssignmentInstructions;
