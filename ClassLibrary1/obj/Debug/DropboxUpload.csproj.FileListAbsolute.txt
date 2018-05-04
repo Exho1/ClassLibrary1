@@ -96,11 +96,6 @@ c:\users\nathaniel\source\repos\ClassLibrary1\ClassLibrary1\bin\Debug\System.Xml
 c:\users\nathaniel\source\repos\ClassLibrary1\ClassLibrary1\bin\Debug\System.Xml.XmlSerializer.dll
 c:\users\nathaniel\source\repos\ClassLibrary1\ClassLibrary1\bin\Debug\System.Xml.XPath.dll
 c:\users\nathaniel\source\repos\ClassLibrary1\ClassLibrary1\bin\Debug\System.Xml.XPath.XDocument.dll
-c:\users\nathaniel\source\repos\ClassLibrary1\ClassLibrary1\bin\Debug\Carbon.Forms.dll
-c:\users\nathaniel\source\repos\ClassLibrary1\ClassLibrary1\bin\Debug\Carbon.Json.dll
-c:\users\nathaniel\source\repos\ClassLibrary1\ClassLibrary1\bin\Debug\Carbon.OAuth2.dll
-c:\users\nathaniel\source\repos\ClassLibrary1\ClassLibrary1\bin\Debug\Carbon.Storage.dll
-c:\users\nathaniel\source\repos\ClassLibrary1\ClassLibrary1\bin\Debug\Dropbox.dll
 c:\users\nathaniel\source\repos\ClassLibrary1\ClassLibrary1\bin\Debug\Newtonsoft.Json.dll
 c:\users\nathaniel\source\repos\ClassLibrary1\ClassLibrary1\bin\Debug\System.Text.Encodings.Web.dll
 c:\users\nathaniel\source\repos\ClassLibrary1\ClassLibrary1\bin\Debug\System.Threading.Tasks.Extensions.dll
@@ -225,3 +220,5 @@ E:\Users\Nathaniel\Source\Repos\MusicTeacherApp3\ClassLibrary1\obj\Debug\Dropbox
 E:\Users\Nathaniel\Source\Repos\MusicTeacherApp3\ClassLibrary1\obj\Debug\ClassLibrary1.dll
 E:\Users\Nathaniel\Source\Repos\MusicTeacherApp3\ClassLibrary1\obj\Debug\ClassLibrary1.pdb
 C:\Users\Nathaniel\source\repos\ClassLibrary1\ClassLibrary1\bin\Debug\MediaToolkit.dll
+C:\Users\Nathaniel\source\repos\ClassLibrary1\ClassLibrary1\bin\Debug\Dropbox.Api.dll
+C:\Users\Nathaniel\source\repos\ClassLibrary1\ClassLibrary1\bin\Debug\Dropbox.Api.xml

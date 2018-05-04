@@ -144,11 +144,14 @@ namespace MusicTeacherGUI
 
         }
 
+
         private async void s_btnFile_ClickAsync(object sender, EventArgs e)
         {
             s_rchFileDetails.AppendText("\nStarting upload...\n");
 
-            await studentUploader.UploadVideoFile(s_fileSelector.FileName, "Uploaded this bear from our app.mp4");
+            string uploadURL = await studentUploader.UploadVideoFile(s_fileSelector.FileName, "Uploaded this bear from our app.mp4");
+
+
 
             /*Action<string> prog = studentUploader.getProgress();
 

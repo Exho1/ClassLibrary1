@@ -1,12 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.IO;
+using System.Linq;
+using System.Net.Http;
+using System.Text;
 using System.Threading.Tasks;
 
-using Dropbox;
+using Dropbox.Api;
+using Dropbox.Api.Files;
 using Dropbox.Api.Sharing;
+using Dropbox.Api.Sharing.Routes;
+
 using MediaToolkit;
 using MediaToolkit.Options;
 using MediaToolkit.Model;
@@ -15,72 +19,177 @@ namespace DropboxUpload
 {
     public class Uploader
     {
+        private HttpClient webClient;
+        private DropboxClient client;
+
+        private string uploadFrom;
+        private string fileName;
+
+        private float uploadProgress = 0f;
+
+        private string[] validExtensions =
+            {
+                // Common enough video extensions
+                ".mov", ".avi", ".mov", ".qt", ".wmv", ".flv", ".mp4", ".m4v", ".mpg", ".mpeg", ".m4v", 
+
+                // And some audio extensions
+                ".mp3", ".m4a", ".aac", ".oga", ".wav", ".mp2"
+            };
+
+
+        /// <summary>
+        /// The Uploader class creates a Dropbox Client which communicates via their V2 API to upload files to the shared folder
+        /// </summary>
         public Uploader()
         {
-            
+
+            webClient = new HttpClient(new WebRequestHandler { ReadWriteTimeout = 10 * 1000 })
+            {
+                Timeout = TimeSpan.FromMinutes(.05)
+            };
+
+            client = new DropboxClient(Credentials.apiKey);
         }
 
-        private Dropbox.DropboxClient client;
-
-
-
-        public Action<string> getProgress()
+        /// <summary>
+        /// Uploads a video file to Dropbox
+        /// </summary>
+        /// <param name="sourcePath"></param>
+        /// <param name="newPath"></param>
+        /// <returns></returns>
+        public async Task<string> UploadVideoFile(string sourcePath, string newPath)
         {
-            return client.Progress;
+
+            string toBeUploadedExt = Path.GetExtension(sourcePath).ToLower();
+
+            if (!validExtensions.Contains(toBeUploadedExt))
+            {
+                Console.WriteLine("Denied upload. File extension: " + toBeUploadedExt + " is not on the white list");
+                return "Upload Denied";
+            }
+
+            string newURL = await ChunkUpload(newPath, sourcePath);
+
+            return newURL;
         }
 
-        public async Task UploadVideoFile(string sourcePath, string newPath)
+        public float getProgress()
         {
-            Console.WriteLine("Starting upload");
-
-            // Create a new dropbox client
-            client = new DropboxClient(Credentials.key, Credentials.secret);
-
-            // Create a request to upload a file
-            UploadFileRequest req = new UploadFileRequest(newPath);
-
-            Console.WriteLine("Request created...");
-
-            // Create a stream which pulls the data from the file on our computer that we want to upload
-            FileStream stream = new FileStream(sourcePath, FileMode.Open);
-
-            Console.WriteLine("Stream created...");
-
-            Console.WriteLine("Uploading file...");
-
-            // Start the upload
-            PutFileResult res = await client.UploadFileAsync(req, stream, Credentials.apiKey);
-
-            string fileNameUploaded = Path.GetFileName(sourcePath);
-
-            
-
-            createLink(res.PathLower, res.Id, fileNameUploaded);
-
-            Console.WriteLine("Upload finished");
-
+            return uploadProgress;
         }
 
-        public void createLink( string dropboxLocalPath, string fileID, string fileNameUploaded )
+        public string[] getValidExtensions()
         {
-            Console.WriteLine("CREATE LINK");
+            return validExtensions;
+        }
 
-            SharedLinkMetadata data = new SharedLinkMetadata();
+        public override string ToString()
+        {
+            return "Dropbox Uploader: Src:" + uploadFrom + ", File:" + fileName;
+        }
 
-            CreateSharedLinkArg a = new CreateSharedLinkArg(dropboxLocalPath);
+        private async Task<string> createSharedURL(string newFileName, FileMetadata m)
+        {
+            // Create a new API call to get all the shared links
+            ListSharedLinksArg arg = new ListSharedLinksArg();
+            ListSharedLinksResult sharedResult = await client.Sharing.ListSharedLinksAsync(arg);
 
-            // Intellisense doesn't know what arguments go in this function and it won't run with zero args
-            // The dropbox api doesn't have any arguments for this class's constructor
-            //SharingUserRoutes route = new SharingUserRoutes();
+            // Returns a list of all shared links in the dropbox
+            IList<SharedLinkMetadata> allSharedLinks = sharedResult.Links;
 
-            //route.BeginGetSharedLinkFile(
+            for (int i = 0; i < allSharedLinks.Count; i++)
+            {
+                // Checks if we already have a shared link for this file
+                if (allSharedLinks[i].Name.ToLower() == newFileName.ToLower())
+                {
+                    Console.WriteLine("URL already exists for file upload");
+                    return allSharedLinks[i].Url;
+                }
+            }
 
-            Console.WriteLine("URL: " + data.Url);
-            Console.WriteLine("Short URL: " + a.ShortUrl);
+            // Create a new shared link for that dropbox file
+            CreateSharedLinkWithSettingsArg createSharedLinkArg = new CreateSharedLinkWithSettingsArg(m.PathLower);
+
+            try
+            {
+                // Get the metadata
+                SharedLinkMetadata data = await client.Sharing.CreateSharedLinkWithSettingsAsync(createSharedLinkArg);
+
+                Console.WriteLine("URL: " + data.Url);
+                return data.Url;
+            }
+            catch (Exception e)
+            {
+                // This code should never hit because we already check if it exists earlier but better safe than sorry
+                Console.WriteLine("Url already exists (unreachable code here)");
+                return e.Message;
+            }
 
         }
 
-        public string getVideoThumbnail( string filePath )
+        private async Task<string> ChunkUpload(string newFileName, string sourcePath)
+        {
+            Console.WriteLine("Chunk upload file...");
+
+            uploadFrom = sourcePath;
+            fileName = newFileName;
+
+            // Uploads 500kb at a time
+            const int chunkSize = 512 * 1024;
+
+            FileStream stream;
+
+            using (stream = new FileStream(sourcePath, FileMode.Open))
+            {
+                int numChunks = (int)Math.Ceiling((double)stream.Length / chunkSize);
+
+                byte[] buffer = new byte[chunkSize];
+                string sessionId = null;
+
+                for (var idx = 0; idx < numChunks; idx++)
+                {
+                    Console.WriteLine("Start uploading chunk {0}/{1}", idx, numChunks);
+                    var byteRead = stream.Read(buffer, 0, chunkSize);
+
+                    uploadProgress = (idx * 1.0f / numChunks);
+
+                    using (MemoryStream memStream = new MemoryStream(buffer, 0, byteRead))
+                    {
+                        if (idx == 0)
+                        {
+                            var result = await client.Files.UploadSessionStartAsync(body: memStream);
+                            sessionId = result.SessionId;
+                        }
+
+                        else
+                        {
+                            UploadSessionCursor cursor = new UploadSessionCursor(sessionId, (ulong)(chunkSize * idx));
+
+                            FileMetadata meta = new FileMetadata("null", "null", DateTime.Today, DateTime.Today, "2aba38830", 0);
+
+                            if (idx == numChunks - 1)
+                            {
+                                meta = await client.Files.UploadSessionFinishAsync(cursor, new CommitInfo("/" + newFileName), memStream);
+
+                                return await createSharedURL(newFileName, meta);
+
+                               // Console.WriteLine("File can be found at : " + f);
+                            }
+
+                            else
+                            {
+                                await client.Files.UploadSessionAppendV2Async(cursor, body: memStream);
+                            }
+
+                        }
+                    }
+                }
+            }
+
+            return "null";
+        }
+
+        public string getVideoThumbnail(string filePath)
         {
 
             Directory.CreateDirectory(Path.GetTempPath() + "musicteacherapp");
