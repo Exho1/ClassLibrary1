@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{AD48B563-F7A0-4C80-9E10-135A2505B648}</ProjectGuid>
+    <ProjectGuid>{0C28EB21-CB47-4D8F-AC0A-64BB8E5BB834}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>ConsoleApp</RootNamespace>
-    <AssemblyName>ConsoleApp</AssemblyName>
+    <RootNamespace>MusicTeacherAppDatabaseAccess</RootNamespace>
+    <AssemblyName>MusicTeacherAppDatabaseAccess</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -42,17 +42,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DropboxAPI.cs" />
+    <Compile Include="Assignment.cs" />
+    <Compile Include="Course.cs" />
+    <Compile Include="Grade.cs" />
+    <Compile Include="Person.cs" />
+    <Compile Include="Submission.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\ClassLibrary1\DropboxUpload.csproj">
-      <Project>{693b34d7-38f1-4f6a-b0b1-1f892d4f751e}</Project>
-      <Name>DropboxUpload</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

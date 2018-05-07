@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E9A41840-92BA-48AB-A915-F066305C8947}</ProjectGuid>
+    <ProjectGuid>{C750A814-E5BC-45BD-BDF0-BDE68060C3E8}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>VideoUploader</RootNamespace>
-    <AssemblyName>VideoUploader</AssemblyName>
+    <RootNamespace>Submission</RootNamespace>
+    <AssemblyName>Submission</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -47,12 +47,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\ClassLibrary1\DropboxUpload.csproj">
-      <Project>{693b34d7-38f1-4f6a-b0b1-1f892d4f751e}</Project>
-      <Name>DropboxUpload</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

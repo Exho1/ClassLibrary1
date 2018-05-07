@@ -4,16 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using DropBoxUpload;
-
-namespace VideoUploader
+namespace Submission
 {
     class Program
     {
         static void Main(string[] args)
         {
-
-            
         }
     }
 }

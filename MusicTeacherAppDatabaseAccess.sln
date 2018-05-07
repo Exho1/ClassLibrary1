@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2027
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicTeacherAppDatabaseAccess", "MusicTeacherAppDatabaseAccess\MusicTeacherAppDatabaseAccess.csproj", "{0C28EB21-CB47-4D8F-AC0A-64BB8E5BB834}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0C28EB21-CB47-4D8F-AC0A-64BB8E5BB834}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C28EB21-CB47-4D8F-AC0A-64BB8E5BB834}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C28EB21-CB47-4D8F-AC0A-64BB8E5BB834}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C28EB21-CB47-4D8F-AC0A-64BB8E5BB834}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {51FFE033-9C3D-499F-B4A3-C59E3E060ECE}
+	EndGlobalSection
+EndGlobal
