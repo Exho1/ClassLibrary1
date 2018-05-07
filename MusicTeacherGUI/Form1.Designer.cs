@@ -56,11 +56,23 @@
             this.s_btnSelect = new System.Windows.Forms.Button();
             this.s_tabAssignments = new System.Windows.Forms.TabPage();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.s_txtAssignmentPoints = new System.Windows.Forms.TextBox();
+            this.label31 = new System.Windows.Forms.Label();
+            this.s_txtAssignmentDueDate = new System.Windows.Forms.TextBox();
+            this.label30 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.s_rchAssignmentInstructions = new System.Windows.Forms.RichTextBox();
             this.label22 = new System.Windows.Forms.Label();
             this.s_todoAssignments = new System.Windows.Forms.ListView();
             this.s_tabGrades = new System.Windows.Forms.TabPage();
+            this.s_lblClassGrade = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.s_linkAssignmentURL = new System.Windows.Forms.LinkLabel();
+            this.label28 = new System.Windows.Forms.Label();
+            this.s_rchInstructorComments = new System.Windows.Forms.RichTextBox();
+            this.s_chkLateAssignment = new System.Windows.Forms.CheckBox();
+            this.label29 = new System.Windows.Forms.Label();
+            this.s_txtAssignmentGrade = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.s_cmboGradesClass = new System.Windows.Forms.ComboBox();
@@ -115,18 +127,6 @@
             this.label19 = new System.Windows.Forms.Label();
             this.listView2 = new System.Windows.Forms.ListView();
             this.pnlTeacher = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.s_linkAssignmentURL = new System.Windows.Forms.LinkLabel();
-            this.label28 = new System.Windows.Forms.Label();
-            this.s_rchInstructorComments = new System.Windows.Forms.RichTextBox();
-            this.s_chkLateAssignment = new System.Windows.Forms.CheckBox();
-            this.label29 = new System.Windows.Forms.Label();
-            this.s_txtAssignmentGrade = new System.Windows.Forms.TextBox();
-            this.s_lblClassGrade = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
-            this.s_txtAssignmentDueDate = new System.Windows.Forms.TextBox();
-            this.s_txtAssignmentPoints = new System.Windows.Forms.TextBox();
-            this.label31 = new System.Windows.Forms.Label();
             this.pnlLogin.SuspendLayout();
             this.pnlStudent.SuspendLayout();
             this.s_tabCntrl.SuspendLayout();
@@ -136,6 +136,7 @@
             this.s_tabAssignments.SuspendLayout();
             this.panel4.SuspendLayout();
             this.s_tabGrades.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.t_tabCntrlTeacher.SuspendLayout();
             this.t_tabHome.SuspendLayout();
             this.t_tabGrade.SuspendLayout();
@@ -145,7 +146,6 @@
             this.t_tabClassOverview.SuspendLayout();
             this.panel3.SuspendLayout();
             this.pnlTeacher.SuspendLayout();
-            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlLogin
@@ -448,6 +448,42 @@
             this.panel4.Size = new System.Drawing.Size(357, 301);
             this.panel4.TabIndex = 10;
             // 
+            // s_txtAssignmentPoints
+            // 
+            this.s_txtAssignmentPoints.Location = new System.Drawing.Point(80, 34);
+            this.s_txtAssignmentPoints.Name = "s_txtAssignmentPoints";
+            this.s_txtAssignmentPoints.ReadOnly = true;
+            this.s_txtAssignmentPoints.Size = new System.Drawing.Size(92, 20);
+            this.s_txtAssignmentPoints.TabIndex = 17;
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label31.Location = new System.Drawing.Point(3, 34);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(48, 16);
+            this.label31.TabIndex = 16;
+            this.label31.Text = "Points:";
+            // 
+            // s_txtAssignmentDueDate
+            // 
+            this.s_txtAssignmentDueDate.Location = new System.Drawing.Point(80, 4);
+            this.s_txtAssignmentDueDate.Name = "s_txtAssignmentDueDate";
+            this.s_txtAssignmentDueDate.ReadOnly = true;
+            this.s_txtAssignmentDueDate.Size = new System.Drawing.Size(92, 20);
+            this.s_txtAssignmentDueDate.TabIndex = 15;
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label30.Location = new System.Drawing.Point(3, 4);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(71, 16);
+            this.label30.TabIndex = 13;
+            this.label30.Text = "Due Date: ";
+            // 
             // label23
             // 
             this.label23.AutoSize = true;
@@ -498,6 +534,87 @@
             this.s_tabGrades.TabIndex = 2;
             this.s_tabGrades.Text = "Grades";
             this.s_tabGrades.UseVisualStyleBackColor = true;
+            // 
+            // s_lblClassGrade
+            // 
+            this.s_lblClassGrade.AutoSize = true;
+            this.s_lblClassGrade.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.s_lblClassGrade.Location = new System.Drawing.Point(153, 46);
+            this.s_lblClassGrade.Name = "s_lblClassGrade";
+            this.s_lblClassGrade.Size = new System.Drawing.Size(49, 16);
+            this.s_lblClassGrade.TabIndex = 10;
+            this.s_lblClassGrade.Text = "Grade:";
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel5.Controls.Add(this.s_linkAssignmentURL);
+            this.panel5.Controls.Add(this.label28);
+            this.panel5.Controls.Add(this.s_rchInstructorComments);
+            this.panel5.Controls.Add(this.s_chkLateAssignment);
+            this.panel5.Controls.Add(this.label29);
+            this.panel5.Controls.Add(this.s_txtAssignmentGrade);
+            this.panel5.Location = new System.Drawing.Point(261, 43);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(259, 285);
+            this.panel5.TabIndex = 9;
+            // 
+            // s_linkAssignmentURL
+            // 
+            this.s_linkAssignmentURL.AutoSize = true;
+            this.s_linkAssignmentURL.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.s_linkAssignmentURL.Location = new System.Drawing.Point(3, 13);
+            this.s_linkAssignmentURL.Name = "s_linkAssignmentURL";
+            this.s_linkAssignmentURL.Size = new System.Drawing.Size(168, 16);
+            this.s_linkAssignmentURL.TabIndex = 15;
+            this.s_linkAssignmentURL.TabStop = true;
+            this.s_linkAssignmentURL.Text = "Submission Link (Dropbox)";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(3, 119);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(106, 13);
+            this.label28.TabIndex = 13;
+            this.label28.Text = "Instructor Comments:";
+            // 
+            // s_rchInstructorComments
+            // 
+            this.s_rchInstructorComments.Location = new System.Drawing.Point(6, 135);
+            this.s_rchInstructorComments.Name = "s_rchInstructorComments";
+            this.s_rchInstructorComments.ReadOnly = true;
+            this.s_rchInstructorComments.Size = new System.Drawing.Size(245, 141);
+            this.s_rchInstructorComments.TabIndex = 12;
+            this.s_rchInstructorComments.Text = "";
+            // 
+            // s_chkLateAssignment
+            // 
+            this.s_chkLateAssignment.AutoSize = true;
+            this.s_chkLateAssignment.Enabled = false;
+            this.s_chkLateAssignment.Location = new System.Drawing.Point(6, 90);
+            this.s_chkLateAssignment.Name = "s_chkLateAssignment";
+            this.s_chkLateAssignment.Size = new System.Drawing.Size(123, 17);
+            this.s_chkLateAssignment.TabIndex = 10;
+            this.s_chkLateAssignment.Text = "Turned in late (-10%)";
+            this.s_chkLateAssignment.UseVisualStyleBackColor = true;
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(3, 48);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(36, 13);
+            this.label29.TabIndex = 8;
+            this.label29.Text = "Grade";
+            // 
+            // s_txtAssignmentGrade
+            // 
+            this.s_txtAssignmentGrade.Location = new System.Drawing.Point(6, 64);
+            this.s_txtAssignmentGrade.Name = "s_txtAssignmentGrade";
+            this.s_txtAssignmentGrade.ReadOnly = true;
+            this.s_txtAssignmentGrade.Size = new System.Drawing.Size(98, 20);
+            this.s_txtAssignmentGrade.TabIndex = 7;
             // 
             // label5
             // 
@@ -1034,123 +1151,6 @@
             this.pnlTeacher.TabIndex = 3;
             this.pnlTeacher.Visible = false;
             // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel5.Controls.Add(this.s_linkAssignmentURL);
-            this.panel5.Controls.Add(this.label28);
-            this.panel5.Controls.Add(this.s_rchInstructorComments);
-            this.panel5.Controls.Add(this.s_chkLateAssignment);
-            this.panel5.Controls.Add(this.label29);
-            this.panel5.Controls.Add(this.s_txtAssignmentGrade);
-            this.panel5.Location = new System.Drawing.Point(261, 43);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(259, 285);
-            this.panel5.TabIndex = 9;
-            // 
-            // s_linkAssignmentURL
-            // 
-            this.s_linkAssignmentURL.AutoSize = true;
-            this.s_linkAssignmentURL.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.s_linkAssignmentURL.Location = new System.Drawing.Point(3, 13);
-            this.s_linkAssignmentURL.Name = "s_linkAssignmentURL";
-            this.s_linkAssignmentURL.Size = new System.Drawing.Size(168, 16);
-            this.s_linkAssignmentURL.TabIndex = 15;
-            this.s_linkAssignmentURL.TabStop = true;
-            this.s_linkAssignmentURL.Text = "Submission Link (Dropbox)";
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(3, 119);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(106, 13);
-            this.label28.TabIndex = 13;
-            this.label28.Text = "Instructor Comments:";
-            // 
-            // s_rchInstructorComments
-            // 
-            this.s_rchInstructorComments.Location = new System.Drawing.Point(6, 135);
-            this.s_rchInstructorComments.Name = "s_rchInstructorComments";
-            this.s_rchInstructorComments.ReadOnly = true;
-            this.s_rchInstructorComments.Size = new System.Drawing.Size(245, 141);
-            this.s_rchInstructorComments.TabIndex = 12;
-            this.s_rchInstructorComments.Text = "";
-            // 
-            // s_chkLateAssignment
-            // 
-            this.s_chkLateAssignment.AutoSize = true;
-            this.s_chkLateAssignment.Enabled = false;
-            this.s_chkLateAssignment.Location = new System.Drawing.Point(6, 90);
-            this.s_chkLateAssignment.Name = "s_chkLateAssignment";
-            this.s_chkLateAssignment.Size = new System.Drawing.Size(123, 17);
-            this.s_chkLateAssignment.TabIndex = 10;
-            this.s_chkLateAssignment.Text = "Turned in late (-10%)";
-            this.s_chkLateAssignment.UseVisualStyleBackColor = true;
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(3, 48);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(36, 13);
-            this.label29.TabIndex = 8;
-            this.label29.Text = "Grade";
-            // 
-            // s_txtAssignmentGrade
-            // 
-            this.s_txtAssignmentGrade.Location = new System.Drawing.Point(6, 64);
-            this.s_txtAssignmentGrade.Name = "s_txtAssignmentGrade";
-            this.s_txtAssignmentGrade.ReadOnly = true;
-            this.s_txtAssignmentGrade.Size = new System.Drawing.Size(98, 20);
-            this.s_txtAssignmentGrade.TabIndex = 7;
-            // 
-            // s_lblClassGrade
-            // 
-            this.s_lblClassGrade.AutoSize = true;
-            this.s_lblClassGrade.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.s_lblClassGrade.Location = new System.Drawing.Point(153, 46);
-            this.s_lblClassGrade.Name = "s_lblClassGrade";
-            this.s_lblClassGrade.Size = new System.Drawing.Size(49, 16);
-            this.s_lblClassGrade.TabIndex = 10;
-            this.s_lblClassGrade.Text = "Grade:";
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.Location = new System.Drawing.Point(3, 4);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(71, 16);
-            this.label30.TabIndex = 13;
-            this.label30.Text = "Due Date: ";
-            // 
-            // s_txtAssignmentDueDate
-            // 
-            this.s_txtAssignmentDueDate.Location = new System.Drawing.Point(80, 4);
-            this.s_txtAssignmentDueDate.Name = "s_txtAssignmentDueDate";
-            this.s_txtAssignmentDueDate.ReadOnly = true;
-            this.s_txtAssignmentDueDate.Size = new System.Drawing.Size(92, 20);
-            this.s_txtAssignmentDueDate.TabIndex = 15;
-            // 
-            // s_txtAssignmentPoints
-            // 
-            this.s_txtAssignmentPoints.Location = new System.Drawing.Point(80, 34);
-            this.s_txtAssignmentPoints.Name = "s_txtAssignmentPoints";
-            this.s_txtAssignmentPoints.ReadOnly = true;
-            this.s_txtAssignmentPoints.Size = new System.Drawing.Size(92, 20);
-            this.s_txtAssignmentPoints.TabIndex = 17;
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label31.Location = new System.Drawing.Point(3, 34);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(48, 16);
-            this.label31.TabIndex = 16;
-            this.label31.Text = "Points:";
-            // 
             // frmApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1178,6 +1178,8 @@
             this.panel4.PerformLayout();
             this.s_tabGrades.ResumeLayout(false);
             this.s_tabGrades.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.t_tabCntrlTeacher.ResumeLayout(false);
             this.t_tabHome.ResumeLayout(false);
             this.t_tabHome.PerformLayout();
@@ -1194,8 +1196,6 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.pnlTeacher.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
             this.ResumeLayout(false);
 
         }

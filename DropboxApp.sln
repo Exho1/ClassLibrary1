@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DropboxUpload", "ClassLibra
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicTeacherGUI", "MusicTeacherGUI\MusicTeacherGUI.csproj", "{66E82B38-A6A0-4EA2-A304-78FADD9E8F49}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicTeacherAppDatabaseAccess", "MusicTeacherAppDatabaseAccess\MusicTeacherAppDatabaseAccess.csproj", "{0C28EB21-CB47-4D8F-AC0A-64BB8E5BB834}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Database Access", "MusicTeacherAppDatabaseAccess\Database Access.csproj", "{0C28EB21-CB47-4D8F-AC0A-64BB8E5BB834}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

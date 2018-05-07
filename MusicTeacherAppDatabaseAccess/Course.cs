@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MusicTeacherAppDatabaseAccess
 {
-    class Course
+    public class Course
     {
         public string CourseId { set; get; }
         public string CourseName { set; get; }

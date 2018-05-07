@@ -17,3 +17,6 @@ C:\Users\Nathaniel\source\repos\ClassLibrary1\MusicTeacherGUI\bin\Debug\Dropbox.
 C:\Users\Nathaniel\source\repos\ClassLibrary1\MusicTeacherGUI\bin\Debug\Newtonsoft.Json.xml
 C:\Users\Nathaniel\source\repos\ClassLibrary1\MusicTeacherGUI\bin\Debug\System.Net.Http.dll
 C:\Users\Nathaniel\source\repos\ClassLibrary1\MusicTeacherGUI\obj\Debug\MusicTeacherGUI.exe.config
+C:\Users\Nathaniel\source\repos\ClassLibrary1\MusicTeacherGUI\bin\Debug\MusicTeacherAppDatabaseAccess.exe
+C:\Users\Nathaniel\source\repos\ClassLibrary1\MusicTeacherGUI\bin\Debug\MusicTeacherAppDatabaseAccess.pdb
+C:\Users\Nathaniel\source\repos\ClassLibrary1\MusicTeacherGUI\bin\Debug\MusicTeacherAppDatabaseAccess.exe.config

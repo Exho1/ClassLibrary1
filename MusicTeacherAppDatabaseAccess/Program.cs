@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace MusicTeacherAppDatabaseAccess
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {

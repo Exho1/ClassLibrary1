@@ -12,6 +12,8 @@ using System.IO;
 using System.Diagnostics;
 using DropboxUpload;
 
+using MusicTeacherAppDatabaseAccess;
+
 namespace MusicTeacherGUI
 {
     public partial class frmApp : Form
@@ -69,6 +71,15 @@ namespace MusicTeacherGUI
 
         private void button4_Click(object sender, EventArgs e)
         {
+
+            string personID = txtUsername.Text.ToLower();
+
+            // Make sure this isn't empty
+            if (personID != null)
+            {
+                return;
+            }
+
             if (guiView == 's')
             {
                 pnlLogin.Visible = false;
@@ -85,8 +96,25 @@ namespace MusicTeacherGUI
             btnTeachView.Enabled = true;
             btnStudentView.Enabled = true;
 
-            // Pull the necessary info from the database
-            //txtUsername;
+            // Get the data for the connected user
+            List<string> pData = Person.GetPersonRowData(personID);
+
+            // Create a user with that data
+            Person user = new Person(pData);
+
+            // Set our global user to this new person object
+            ConnectedUser.setConnUser(user);
+
+            // 
+            if (guiView == 's')
+            {
+                
+
+            }
+            else if (guiView == 't')
+            {
+                
+            }
         }
 
         private void label1_Click(object sender, EventArgs e)

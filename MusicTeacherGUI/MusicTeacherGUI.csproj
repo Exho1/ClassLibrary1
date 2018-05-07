@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConnectedUser.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,6 +83,10 @@
     <ProjectReference Include="..\ClassLibrary1\DropboxUpload.csproj">
       <Project>{693b34d7-38f1-4f6a-b0b1-1f892d4f751e}</Project>
       <Name>DropboxUpload</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MusicTeacherAppDatabaseAccess\Database Access.csproj">
+      <Project>{0c28eb21-cb47-4d8f-ac0a-64bb8e5bb834}</Project>
+      <Name>Database Access</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
