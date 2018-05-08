@@ -145,5 +145,45 @@ namespace MusicTeacherGUI
 
             return _courses[course];
         }
+
+        /// <summary>
+        /// Returns a List of tuples containing all the assignments for the current user
+        /// </summary>
+        /// <returns>Index: Tuple(courseName, assignmentName)</returns>
+        public static List<Tuple<string, string>> getAllAssignments()
+        {
+
+            // List with a tuple inside
+            // Index: Tuple( course name, assignment name )
+            List<Tuple<string, string>> allAssignments = new List<Tuple<string, string>>();
+
+            // Create a tuple to store Index, 
+            //Tuple<string, string> allAssignments = new Tuple<string, string>();
+
+            // Gets all the course names 
+            List<string> keys = _courses.Keys.ToList<string>();
+
+            // Iterate through the courses
+            for (int i = 0; i < _courses.Count; i++)
+            {
+                // Get the assignments list for the given course
+                List<string> assignmentList = _courses[keys[i]];
+
+                // Iterate through the assignments for the course
+                for (int k = 0; k < assignmentList.Count; k++)
+                {
+                    // Get the specific assignment name
+                    string specificAssignment = assignmentList[k];
+
+                    // Create a tuple to store it
+                    Tuple<string, string> entry = new Tuple<string, string>(keys[i], specificAssignment);
+
+                    // Add 
+                    allAssignments.Add(entry);
+                }
+            }
+
+            return allAssignments;
+        }
     }
 }

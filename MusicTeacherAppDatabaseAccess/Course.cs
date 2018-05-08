@@ -153,7 +153,11 @@ namespace MusicTeacherAppDatabaseAccess
             return result;
         }
 
-
+        /// <summary>
+        /// Returns a list of assignment names for the given course name
+        /// </summary>
+        /// <param name="courseName">Course name</param>
+        /// <returns>List of assignment names</returns>
         public static List<string> GetCourseAssignmentList(String courseName)
         {
             List<string> result = new List<string>();

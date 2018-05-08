@@ -230,6 +230,21 @@ namespace MusicTeacherGUI
             // When we select a class and assignment, we are now good to go for the submit
         }
 
+        // Selecting an assignment in the students assignments tab
+        private void s_todoAssignments_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            /*
+             * Index changed:
+             *      Get assignment name
+             *      Get assignment ID from assignment name through database
+             *      Populate panel with asdsignment info
+             */
+
+            //ListViewI selected = s_todoAssignments.SelectedItems[0];
+
+            
+        }
+
         // Student tab handler
         private void s_tabCntrl_TabIndexChanged(object sender, EventArgs e)
         {
@@ -240,6 +255,28 @@ namespace MusicTeacherGUI
             {
                 // Populate the Classes combo box
                 Util.populateCombobox(s_cmboUploadClass, ConnectedUser.getCourses());
+            }
+            else if (current == s_tabAssignments)
+            {
+
+
+                List<string> formattedAssignments = new List<string>();
+
+                List<Tuple<string, string>> all = ConnectedUser.getAllAssignments();
+
+                // Format all the assignments to "class - assignment" for the list view 
+                for (int i = 0; i < all.Count; i++)
+                {
+                    if (all[i] != null)
+                    {
+                        Tuple<string, string> t = all[i];
+
+                        formattedAssignments.Add(t.Item1.ToString() + " - " + t.Item2.ToString());
+                    }
+                }
+
+                // Populate the list view with the contents
+                Util.populateListView(s_todoAssignments, formattedAssignments);
             }
         }
 
