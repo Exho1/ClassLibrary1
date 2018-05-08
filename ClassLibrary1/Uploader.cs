@@ -25,8 +25,6 @@ namespace DropboxUpload
         private string uploadFrom;
         private string fileName;
 
-        private float uploadProgress = 0f;
-
         private string[] validExtensions =
             {
                 // Common enough video extensions
@@ -73,21 +71,22 @@ namespace DropboxUpload
             return newURL;
         }
 
-        public float getProgress()
-        {
-            return uploadProgress;
-        }
-
-        public string[] getValidExtensions()
+        /*public string[] getValidExtensions()
         {
             return validExtensions;
-        }
+        }*/
 
         public override string ToString()
         {
             return "Dropbox Uploader: Src:" + uploadFrom + ", File:" + fileName;
         }
 
+        /// <summary>
+        /// Creates a shareable url for the given dropbox file
+        /// </summary>
+        /// <param name="newFileName">The name of the file on Dropbox</param>
+        /// <param name="m">The metadata returned by the upload function</param>
+        /// <returns></returns>
         private async Task<string> createSharedURL(string newFileName, FileMetadata m)
         {
             // Create a new API call to get all the shared links
@@ -127,6 +126,12 @@ namespace DropboxUpload
 
         }
 
+        /// <summary>
+        /// Uploads a given file path to dropbox in chunks
+        /// </summary>
+        /// <param name="newFileName">The file name of the file when its on the server</param>
+        /// <param name="sourcePath">Source path to the file on the user's computer</param>
+        /// <returns>URL of the uploaded file (not shared)</returns>
         private async Task<string> ChunkUpload(string newFileName, string sourcePath)
         {
             Console.WriteLine("Chunk upload file...");
@@ -151,7 +156,7 @@ namespace DropboxUpload
                     Console.WriteLine("Start uploading chunk {0}/{1}", idx, numChunks);
                     var byteRead = stream.Read(buffer, 0, chunkSize);
 
-                    uploadProgress = (idx * 1.0f / numChunks);
+                    //uploadProgress = (idx * 1.0f / numChunks);
 
                     using (MemoryStream memStream = new MemoryStream(buffer, 0, byteRead))
                     {
@@ -189,6 +194,11 @@ namespace DropboxUpload
             return "null";
         }
 
+        /// <summary>
+        /// Creates a thumbnail image for the given video and returns its path 
+        /// </summary>
+        /// <param name="filePath">Path to the video</param>
+        /// <returns>Path to the thumbnail image</returns>
         public string getVideoThumbnail(string filePath)
         {
 

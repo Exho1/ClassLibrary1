@@ -34,6 +34,9 @@ namespace MusicTeacherGUI
 
         private Uploader studentUploader = new Uploader();
 
+        /// <summary>
+        /// Distinguishes 
+        /// </summary>
         private char guiView;
 
         public frmApp()

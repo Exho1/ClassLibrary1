@@ -35,7 +35,11 @@ namespace MusicTeacherAppDatabaseAccess
         }
 
 
-
+        /// <summary>
+        /// Returns grade info for the given grade id
+        /// </summary>
+        /// <param name="gradeId"></param>
+        /// <returns></returns>
         public static List<string> GetGradeRowData(String gradeId)
         {
             List<string> result = new List<string>();
@@ -67,7 +71,10 @@ namespace MusicTeacherAppDatabaseAccess
             return result;
         }
 
-
+        /// <summary>
+        /// Inserts into the database a grade object
+        /// </summary>
+        /// <param name="grade"></param>
         public static void InsertGradeData(Grade grade)
         {
             using (SqlConnection conn = new SqlConnection())
@@ -94,7 +101,10 @@ namespace MusicTeacherAppDatabaseAccess
             }
         }
 
-
+        /// <summary>
+        /// Updates the score of a given grade object
+        /// </summary>
+        /// <param name="grade"></param>
         public static void UpdateScore(Grade grade)
         {
             using (SqlConnection conn = new SqlConnection())

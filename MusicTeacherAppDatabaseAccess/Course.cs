@@ -31,7 +31,11 @@ namespace MusicTeacherAppDatabaseAccess
             TeacherLastName = list[3];
         }
 
-
+        /// <summary>
+        /// Gets the course info for the given course id
+        /// </summary>
+        /// <param name="courseId"></param>
+        /// <returns></returns>
         public static List<string> GetCourseRowData(String courseId)
         {
             List<string> result = new List<string>();
@@ -63,7 +67,10 @@ namespace MusicTeacherAppDatabaseAccess
             return result;
         }
 
-
+        /// <summary>
+        /// Inserts into the database a course object
+        /// </summary>
+        /// <param name="course"></param>
         public static void InsertCourseData(Course course)
         {
             using (SqlConnection conn = new SqlConnection())
@@ -90,6 +97,11 @@ namespace MusicTeacherAppDatabaseAccess
             }
         }
 
+        /// <summary>
+        /// Gets the courses that a person teaches
+        /// </summary>
+        /// <param name="personId"></param>
+        /// <returns></returns>
         public static List<string> GetTeacherCourseList(String personId)   
         {
             List<string> result = new List<string>();
@@ -121,7 +133,11 @@ namespace MusicTeacherAppDatabaseAccess
             return result;
         }
 
-
+        /// <summary>
+        /// Gets all courses that a student is in
+        /// </summary>
+        /// <param name="personId"></param>
+        /// <returns></returns>
         public static List<string> GetStudentCourseList(String personId)
         {
             List<string> result = new List<string>();
@@ -189,7 +205,11 @@ namespace MusicTeacherAppDatabaseAccess
             return result;
         }
 
-        
+        /// <summary>
+        /// Gets a list of students for the given course
+        /// </summary>
+        /// <param name="courseName"></param>
+        /// <returns></returns>
         public static List<string> GetCourseStudentList(String courseName)
         {
             List<string> result = new List<string>();

@@ -69,7 +69,10 @@ namespace MusicTeacherAppDatabaseAccess
             return result;
         }
 
-        //
+        /// <summary>
+        /// Inserts into the database a person object
+        /// </summary>
+        /// <param name="person"></param>
         public static void InsertPersonData(Person person)
         {
             using (SqlConnection conn = new SqlConnection())

@@ -43,6 +43,11 @@ namespace MusicTeacherAppDatabaseAccess
 
         // TODO: Need a function to get an assignment id from an assignment name
 
+        /// <summary>
+        /// Returns the assignment info for the given assignment id
+        /// </summary>
+        /// <param name="assignmentId"></param>
+        /// <returns></returns>
         public static List<string> GetAssignmentRowData(String assignmentId)
         {
             List<string> result = new List<string>();
@@ -74,7 +79,10 @@ namespace MusicTeacherAppDatabaseAccess
             return result;
         }
 
-
+        /// <summary>
+        /// Inserts into the database a given assignment object
+        /// </summary>
+        /// <param name="assignment"></param>
         public static void InsertAssignmentData(Assignment assignment)
         {
             using (SqlConnection conn = new SqlConnection())
