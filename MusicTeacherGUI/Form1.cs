@@ -347,6 +347,8 @@ namespace MusicTeacherGUI
 
         private void s_listGradesAssignments_SelectedIndexChanged(object sender, EventArgs e)
         {
+            s_wipeGradePanel();
+
             if (s_listGradesAssignments.SelectedItems.Count > 0)
             {
                 Console.WriteLine("Selected");
@@ -373,26 +375,45 @@ namespace MusicTeacherGUI
                     return;
                 }
 
-                var subInfo = Submission.GetSubmissionInfoForStudent(assigned.AssignmentId, ConnectedUser.getID());
+                var subInfo = Submission.GetSubmissionInfoForStudent(assigned.AssignmentName, ConnectedUser.getID());
 
                 if (subInfo.Count < 1)
                 {
                     Console.WriteLine("Invalid submission info");
                     return;
                 }
+
                 Grade g = new Grade(gradeData);
                 Submission sub = new Submission(subInfo);
 
-                LinkLabel.Link link = new LinkLabel.Link();
-                link.LinkData = sub.FileLocation;
-                s_linkAssignmentURL.Links.Add(link);
+                try
+                {
 
-                s_txtAssignmentGrade.Text = g.Score.ToString();
-                s_rchInstructorComments.Text = assigned.Comments;
+                    LinkLabel.Link link = new LinkLabel.Link();
+                    link.LinkData = sub.FileLocation;
+                    s_linkAssignmentURL.Links.Add(link);
+
+                    s_txtAssignmentGrade.Text = g.Score.ToString();
+                    s_rchInstructorComments.Text = assigned.Comments;
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("heck " + ex.Message);
+                }
             }
         }
-    
 
+        private void s_wipeGradePanel()
+        {
+            /*t_linkSubmission.Links.Clear();
+            t_txtAssignmentGrade.Text = "";
+            t_rchAssignmentComments.Text = "";
+            t_chkLateBox.Checked = false;*/
+
+            s_linkAssignmentURL.Links.Clear();
+            s_txtAssignmentGrade.Text = "";
+            s_rchInstructorComments.Text = "";
+        }
 
         private void s_btnLogOut_Click(object sender, EventArgs e)
         {
