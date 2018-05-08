@@ -256,7 +256,24 @@ namespace MusicTeacherGUI
              *      Populate panel with asdsignment info
              */
 
-            //ListViewI selected = s_todoAssignments.SelectedItems[0];
+            if (s_todoAssignments.SelectedItems.Count > 0)
+            {
+
+                ListViewItem selected = s_todoAssignments.SelectedItems[0];
+
+                Assignment chosen = Util.listItemContainsAnyAssignment(selected.Text);
+
+                if (chosen != null)
+                {
+                    s_txtAssignmentDueDate.Text = chosen.DueDate.ToShortDateString();
+
+                    s_txtAssignmentPoints.Text = chosen.TotalPoints.ToString();
+
+                    s_rchAssignmentInstructions.Text = chosen.Comments;
+                }
+            }
+
+            //selected.Text;
 
             // Assignment.GetAssignmentRowDataByName
 
@@ -270,11 +287,15 @@ namespace MusicTeacherGUI
 
             if (current == s_tabUpload)
             {
+                Console.WriteLine("Populate uploader");
+
                 // Populate the Classes combo box
                 Util.populateCombobox(s_cmboUploadClass, ConnectedUser.getCourses());
             }
             else if (current == s_tabAssignments)
             {
+                Console.WriteLine("Populate assignments");
+
                 List<string> formattedAssignments = new List<string>();
 
                 List<Tuple<string, string>> all = ConnectedUser.getAllAssignments();
@@ -286,9 +307,16 @@ namespace MusicTeacherGUI
                     {
                         Tuple<string, string> t = all[i];
 
-                        formattedAssignments.Add(t.Item1.ToString() + " - " + t.Item2.ToString());
+                        // Don't add assignments to the "to do" that the student has already submitted
+                        if (!Assignment.HasStudentSubmitted(t.Item2.ToString(), ConnectedUser.getID()))
+                        {
+                            // Format like class name - assignment name
+                            formattedAssignments.Add(t.Item1.ToString() + " - " + t.Item2.ToString());
+                        }
                     }
                 }
+
+                Console.WriteLine("Populating with: " + formattedAssignments.Count);
 
                 // Populate the list view with the contents
                 Util.populateListView(s_todoAssignments, formattedAssignments);
@@ -338,7 +366,30 @@ namespace MusicTeacherGUI
         // Teacher tab handler
         private void t_tabCntrlTeacher_SelectedIndexChanged(object sender, EventArgs e)
         {
+            // Get the current tab
+            TabPage current = t_tabCntrlTeacher.SelectedTab;
 
+            string teachID = ConnectedUser.getID();
+
+            if (current == t_tabGrade)
+            {
+
+                Util.populateListView(t_lstClassOverview, Course.GetTeacherCourseList(teachID));
+
+                
+            }
+        }
+
+        private void t_lstClassOverview_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (t_lstClassOverview.SelectedItems.Count > 0)
+            {
+                ListViewItem item = t_lstClassOverview.SelectedItems[0];
+
+                string selectedClass = item.Text;
+
+                Util.populateListView(t_lstStudentOverview, Course.GetCourseStudentList(selectedClass));
+            }
         }
 
         private void t_btnLogOut_Click(object sender, EventArgs e)

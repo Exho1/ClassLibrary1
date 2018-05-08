@@ -28,6 +28,12 @@ namespace MusicTeacherAppDatabaseAccess
 
         public Submission(List<string> list)
         {
+            // No empty lists here
+            if (list.Count < 1)
+            {
+                return;
+            }
+
             SubmissionId = list[0];
             PersonId = list[1];
             CourseName = list[2];
@@ -100,6 +106,38 @@ namespace MusicTeacherAppDatabaseAccess
                 //Console.ReadLine();ic
 
             }
+        }
+
+        public static List<string> GetSubmissionInfoForStudent(String assignmentName, string studentID)
+        {
+            List<string> result = new List<string>();
+            using (SqlConnection conn = new SqlConnection())
+            {
+                conn.ConnectionString = "Data Source=(localdb)\\MTADB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;";
+                conn.Open();
+
+                SqlCommand command = new SqlCommand("SELECT * FROM MusicTeacherApp.dbo.Submissions WHERE AssignmentName = @assignmentName AND PersonId = @studentId", conn);
+
+                command.Parameters.Add(new SqlParameter("assignmentName", assignmentName));
+                command.Parameters.Add(new SqlParameter("studentId", studentID));
+
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+
+                        for (int i = 0; i < reader.FieldCount; i++)
+                        {
+                            result.Add(Convert.ToString(reader[i]));
+                        }
+
+
+                    }
+                }
+            }
+            //Console.WriteLine(result);
+            //Console.ReadLine();
+            return result;
         }
 
         /// <summary>

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace MusicTeacherAppDatabaseAccess
 {
     public class Assignment
@@ -40,8 +41,6 @@ namespace MusicTeacherAppDatabaseAccess
             AvailableDate = Convert.ToDateTime(list[5]);
             Comments = list[6];
         }
-
-        // TODO: Need a function to get an assignment id from an assignment name
 
         /// <summary>
         /// Returns the assignment info for the given assignment id
@@ -144,6 +143,23 @@ namespace MusicTeacherAppDatabaseAccess
                 //Console.WriteLine("Done! Press enter to move to the next step");
                 //Console.ReadLine();
 
+            }
+        }
+
+        public static bool HasStudentSubmitted( string assignmentName, string personId )
+        {
+            var data = Submission.GetSubmissionInfoForStudent(assignmentName, personId);
+
+            Submission sub = new Submission(data);
+
+            if (sub.SubmissionId == null)
+            {
+                //Console.WriteLine("Don't add already submitted assignment");
+                return false;
+            }
+            else
+            {
+                return true;
             }
         }
     }

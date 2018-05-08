@@ -238,7 +238,7 @@
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(134, 20);
             this.txtUsername.TabIndex = 2;
-            this.txtUsername.Text = "studentjd1";
+            this.txtUsername.Text = "teacherdh1";
             // 
             // btnTeachView
             // 
@@ -282,6 +282,7 @@
             this.s_tabCntrl.SelectedIndex = 0;
             this.s_tabCntrl.Size = new System.Drawing.Size(675, 434);
             this.s_tabCntrl.TabIndex = 0;
+            this.s_tabCntrl.SelectedIndexChanged += new System.EventHandler(this.s_tabCntrl_TabIndexChanged);
             this.s_tabCntrl.TabIndexChanged += new System.EventHandler(this.s_tabCntrl_TabIndexChanged);
             // 
             // s_tabHome
@@ -525,6 +526,7 @@
             // 
             this.s_rchAssignmentInstructions.Location = new System.Drawing.Point(6, 80);
             this.s_rchAssignmentInstructions.Name = "s_rchAssignmentInstructions";
+            this.s_rchAssignmentInstructions.ReadOnly = true;
             this.s_rchAssignmentInstructions.Size = new System.Drawing.Size(238, 204);
             this.s_rchAssignmentInstructions.TabIndex = 11;
             this.s_rchAssignmentInstructions.Text = "";
@@ -547,6 +549,7 @@
             this.s_todoAssignments.Size = new System.Drawing.Size(182, 301);
             this.s_todoAssignments.TabIndex = 1;
             this.s_todoAssignments.UseCompatibleStateImageBehavior = false;
+            this.s_todoAssignments.View = System.Windows.Forms.View.List;
             this.s_todoAssignments.SelectedIndexChanged += new System.EventHandler(this.s_todoAssignments_SelectedIndexChanged);
             // 
             // s_tabGrades
@@ -931,6 +934,7 @@
             this.t_lstClassOverview.Size = new System.Drawing.Size(141, 245);
             this.t_lstClassOverview.TabIndex = 0;
             this.t_lstClassOverview.UseCompatibleStateImageBehavior = false;
+            this.t_lstClassOverview.SelectedIndexChanged += new System.EventHandler(this.t_lstClassOverview_SelectedIndexChanged);
             // 
             // t_tabCreateAssignment
             // 
@@ -1199,9 +1203,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(699, 458);
+            this.Controls.Add(this.pnlLogin);
             this.Controls.Add(this.pnlStudent);
             this.Controls.Add(this.pnlTeacher);
-            this.Controls.Add(this.pnlLogin);
             this.Name = "frmApp";
             this.Text = "Music Teacher Application";
             this.Load += new System.EventHandler(this.frmApp_Load);
