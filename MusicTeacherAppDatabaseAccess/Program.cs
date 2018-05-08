@@ -40,7 +40,7 @@ namespace MusicTeacherAppDatabaseAccess
             // INITIAL TEST CODE FOR GetTeacherCourseList
             // access row from database 
             // append each field to a list
-            String teacher = "teacherws1";
+            /*String teacher = "teacherws1";
             List<string> teacherCourseList = Course.GetTeacherCourseList(teacher);
 
             // display list results in console
@@ -61,31 +61,45 @@ namespace MusicTeacherAppDatabaseAccess
 
 
 
-
+    */
 
 
             // INITIAL TEST CODE FOR InsertSubmissionData()
 
             // create Submission Object for testing
-            Submission testSubmission8 = new Submission("testSubmission8", "testStudent8", "testClass8", "testAssignment8", "testFileLocation8", DateTime.Now);
+            //Submission testSubmission8 = new Submission("testSubmission8", "testStudent8", "testClass8", "testAssignment8", "testFileLocation8", DateTime.Now);
 
             // insert object data into database
-            Submission.InsertSubmissionData(testSubmission8);
+            //Submission.InsertSubmissionData(testSubmission8);
 
-            
+            Console.WriteLine("Total subs: " + Submission.GetTotalSubmissions());
 
-            
+            Console.ReadLine();
+
+            /*Submission test1 = new Submission("NatTest", "studentjd1", "Jazz Band", "test", "url", DateTime.Now);
+
+            Console.WriteLine("Test");
+
+            Submission.InsertSubmissionData(test1);
+
+            List<string> result = Submission.GetSubmissionRowData("NatTest");
+
+            // display list results in console
+            result.ForEach(Console.WriteLine);
+            Console.ReadLine();*/
+
+
             // INIIAL TEST CODE FOR GetSubmissionRow() 
 
             // access row from database with SubmissionId
             // append each field to a list
-            String testId = "testSubmission8";
+            /*String testId = "testSubmission8";
             List<string> result = Submission.GetSubmissionRowData(testId);
 
             // display list results in console
             result.ForEach(Console.WriteLine);
             Console.ReadLine();
-            
+            */
 
         }
     }

@@ -85,7 +85,7 @@ namespace MusicTeacherAppDatabaseAccess
                 conn.ConnectionString = "Data Source=(localdb)\\MTADB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;";
                 conn.Open();
 
-                SqlCommand insertCommand = new SqlCommand("INSERT INTO MusicTeacherApp.dbo.Submissions (SubmissionId, StudentId, ClassId, AssignmentId, FileLocation, SubmissionDateTime) VALUES (@0, @1, @2, @3, @4, @5)", conn);
+                SqlCommand insertCommand = new SqlCommand("INSERT INTO MusicTeacherApp.dbo.Submissions (SubmissionId, PersonId, ClassName, AssignmentName, FileLocation, SubmissionDateTime) VALUES (@0, @1, @2, @3, @4, @5)", conn);
 
                 
                 insertCommand.Parameters.Add(new SqlParameter("0", newEntry.SubmissionId));
@@ -95,10 +95,29 @@ namespace MusicTeacherAppDatabaseAccess
                 insertCommand.Parameters.Add(new SqlParameter("4", newEntry.FileLocation));
                 insertCommand.Parameters.Add(new SqlParameter("5", newEntry.SubmissionDateTime));
 
-                //Console.WriteLine("Commands executed! Total rows affected are " + insertCommand.ExecuteNonQuery());
+                Console.WriteLine("Commands executed! Total rows affected are " + insertCommand.ExecuteNonQuery());
                 //Console.WriteLine("Done! Press enter to move to the next step");
-                //Console.ReadLine();
+                //Console.ReadLine();ic
 
+            }
+        }
+
+        /// <summary>
+        /// Counts all the current submissions and returns that number
+        /// </summary>
+        /// <returns>Number of rows in the submissions table</returns>
+        public static int GetTotalSubmissions()
+        {
+            using (SqlConnection conn = new SqlConnection())
+            {
+                conn.ConnectionString = "Data Source=(localdb)\\MTADB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;";
+                conn.Open();
+
+                SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM MusicTeacherApp.dbo.Submissions", conn);
+
+                int count = (int)cmd.ExecuteScalar();
+
+                return count;
             }
         }
     }
