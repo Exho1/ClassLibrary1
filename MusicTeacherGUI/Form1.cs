@@ -141,6 +141,10 @@ namespace MusicTeacherGUI
          * ///////////////////////////////////
          */
 
+
+        private string s_selectedClass;
+        private string s_selectedAssignment;
+
         // Opens the file selector
         private void button5_Click(object sender, EventArgs e)
         {
@@ -181,7 +185,7 @@ namespace MusicTeacherGUI
         private async void s_btnFile_ClickAsync(object sender, EventArgs e)
         {
             // Create a new submission object
-            Submission upload = new Submission("1", ConnectedUser.getID(), s_cmboUploadClass.SelectedText, s_cmboUploadAssignment.SelectedText, "null", DateTime.Now);
+            Submission upload = new Submission("1", ConnectedUser.getID(), s_selectedClass, s_selectedAssignment, "null", DateTime.Now);
 
             s_rchFileDetails.AppendText("\nStarting upload...\n");
 
@@ -219,6 +223,10 @@ namespace MusicTeacherGUI
             // Get the class we selected
             string selected = s_cmboUploadClass.SelectedItem.ToString();
 
+            s_selectedClass = selected;
+
+            s_cmboUploadAssignment.Items.Clear();
+
             // Populate the Assignments combo box
             Util.populateCombobox(s_cmboUploadAssignment, ConnectedUser.getAssignmentsFromCourse(selected));
 
@@ -227,6 +235,10 @@ namespace MusicTeacherGUI
         private void s_cmboUploadAssignment_SelectedIndexChanged(object sender, EventArgs e)
         {
             // When we select a class and assignment, we are now good to go for the submit
+
+            string selected = s_cmboUploadClass.SelectedItem.ToString();
+
+            s_selectedAssignment = selected;
         }
 
         // Selecting an assignment in the students assignments tab
