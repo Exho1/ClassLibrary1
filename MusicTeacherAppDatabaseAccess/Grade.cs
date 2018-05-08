@@ -101,6 +101,38 @@ namespace MusicTeacherAppDatabaseAccess
             }
         }
 
+        public static List<string> GetGradeDataFromAssignment(String assignmentID, string personID)
+        {
+            List<string> result = new List<string>();
+            using (SqlConnection conn = new SqlConnection())
+            {
+                conn.ConnectionString = "Data Source=(localdb)\\MTADB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;";
+                conn.Open();
+
+                SqlCommand command = new SqlCommand("SELECT * FROM MusicTeacherApp.dbo.Grades WHERE AssignmentId = @asssignment AND PersonId = @person", conn);
+
+                command.Parameters.Add(new SqlParameter("assignment", assignmentID));
+                command.Parameters.Add(new SqlParameter("person", personID));
+
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+
+                        for (int i = 0; i < reader.FieldCount; i++)
+                        {
+                            result.Add(Convert.ToString(reader[i]));
+                        }
+
+
+                    }
+                }
+            }
+            //Console.WriteLine(result);
+            //Console.ReadLine();
+            return result;
+        }
+
         /// <summary>
         /// Updates the score of a given grade object
         /// </summary>

@@ -88,7 +88,7 @@
             this.t_btnClassView = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.t_tabGrade = new System.Windows.Forms.TabPage();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.t_pnlGrade = new System.Windows.Forms.Panel();
             this.t_linkSubmission = new System.Windows.Forms.LinkLabel();
             this.t_btnGradeChangeCancel = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
@@ -96,7 +96,7 @@
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.label10 = new System.Windows.Forms.Label();
             this.t_btnGradeChangeSave = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.t_txtAssignmentGrade = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.t_lstAssignmentOverview = new System.Windows.Forms.ListView();
             this.label8 = new System.Windows.Forms.Label();
@@ -143,7 +143,7 @@
             this.t_tabCntrlTeacher.SuspendLayout();
             this.t_tabHome.SuspendLayout();
             this.t_tabGrade.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.t_pnlGrade.SuspendLayout();
             this.t_tabCreateAssignment.SuspendLayout();
             this.panel2.SuspendLayout();
             this.t_tabClassOverview.SuspendLayout();
@@ -774,7 +774,7 @@
             // 
             // t_tabGrade
             // 
-            this.t_tabGrade.Controls.Add(this.panel1);
+            this.t_tabGrade.Controls.Add(this.t_pnlGrade);
             this.t_tabGrade.Controls.Add(this.label9);
             this.t_tabGrade.Controls.Add(this.t_lstAssignmentOverview);
             this.t_tabGrade.Controls.Add(this.label8);
@@ -790,22 +790,21 @@
             this.t_tabGrade.UseVisualStyleBackColor = true;
             this.t_tabGrade.Click += new System.EventHandler(this.t_tabOverview_Click);
             // 
-            // panel1
+            // t_pnlGrade
             // 
-            this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel1.Controls.Add(this.t_linkSubmission);
-            this.panel1.Controls.Add(this.t_btnGradeChangeCancel);
-            this.panel1.Controls.Add(this.label11);
-            this.panel1.Controls.Add(this.richTextBox2);
-            this.panel1.Controls.Add(this.checkBox1);
-            this.panel1.Controls.Add(this.label10);
-            this.panel1.Controls.Add(this.t_btnGradeChangeSave);
-            this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Enabled = false;
-            this.panel1.Location = new System.Drawing.Point(475, 40);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(174, 362);
-            this.panel1.TabIndex = 8;
+            this.t_pnlGrade.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.t_pnlGrade.Controls.Add(this.t_linkSubmission);
+            this.t_pnlGrade.Controls.Add(this.t_btnGradeChangeCancel);
+            this.t_pnlGrade.Controls.Add(this.label11);
+            this.t_pnlGrade.Controls.Add(this.richTextBox2);
+            this.t_pnlGrade.Controls.Add(this.checkBox1);
+            this.t_pnlGrade.Controls.Add(this.label10);
+            this.t_pnlGrade.Controls.Add(this.t_btnGradeChangeSave);
+            this.t_pnlGrade.Controls.Add(this.t_txtAssignmentGrade);
+            this.t_pnlGrade.Location = new System.Drawing.Point(475, 40);
+            this.t_pnlGrade.Name = "t_pnlGrade";
+            this.t_pnlGrade.Size = new System.Drawing.Size(174, 362);
+            this.t_pnlGrade.TabIndex = 8;
             // 
             // t_linkSubmission
             // 
@@ -817,6 +816,7 @@
             this.t_linkSubmission.TabIndex = 15;
             this.t_linkSubmission.TabStop = true;
             this.t_linkSubmission.Text = "Submission Link (Dropbox)";
+            this.t_linkSubmission.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.t_linkSubmission_LinkClicked);
             // 
             // t_btnGradeChangeCancel
             // 
@@ -874,12 +874,12 @@
             this.t_btnGradeChangeSave.Text = "Save";
             this.t_btnGradeChangeSave.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // t_txtAssignmentGrade
             // 
-            this.textBox1.Location = new System.Drawing.Point(6, 64);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(98, 20);
-            this.textBox1.TabIndex = 7;
+            this.t_txtAssignmentGrade.Location = new System.Drawing.Point(6, 64);
+            this.t_txtAssignmentGrade.Name = "t_txtAssignmentGrade";
+            this.t_txtAssignmentGrade.Size = new System.Drawing.Size(98, 20);
+            this.t_txtAssignmentGrade.TabIndex = 7;
             // 
             // label9
             // 
@@ -1237,8 +1237,8 @@
             this.t_tabHome.PerformLayout();
             this.t_tabGrade.ResumeLayout(false);
             this.t_tabGrade.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.t_pnlGrade.ResumeLayout(false);
+            this.t_pnlGrade.PerformLayout();
             this.t_tabCreateAssignment.ResumeLayout(false);
             this.t_tabCreateAssignment.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -1291,9 +1291,9 @@
         private System.Windows.Forms.ListView t_lstClassOverview;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ListView t_lstAssignmentOverview;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel t_pnlGrade;
         private System.Windows.Forms.Button t_btnGradeChangeSave;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox t_txtAssignmentGrade;
         private System.Windows.Forms.Button t_btnGradeChangeCancel;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.RichTextBox richTextBox2;

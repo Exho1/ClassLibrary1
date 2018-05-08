@@ -93,7 +93,7 @@ namespace MusicTeacherGUI
         {
             _p = p;
 
-            Console.WriteLine("Setting connected user" + p.PersonId);
+            //Console.WriteLine("Setting connected user" + p.PersonId);
 
             if (p != null)
             {

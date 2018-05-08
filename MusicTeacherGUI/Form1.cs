@@ -382,6 +382,8 @@ namespace MusicTeacherGUI
 
         private void t_lstClassOverview_SelectedIndexChanged(object sender, EventArgs e)
         {
+            t_wipeGradingPanel();
+
             if (t_lstClassOverview.SelectedItems.Count > 0)
             {
                 // Clear the previous ones
@@ -413,6 +415,8 @@ namespace MusicTeacherGUI
 
         private void t_lstStudentOverview_SelectedIndexChanged(object sender, EventArgs e)
         {
+            t_wipeGradingPanel();
+
             if (t_lstStudentOverview.SelectedItems.Count > 0)
             {
                 // Clear the previous ones
@@ -427,8 +431,12 @@ namespace MusicTeacherGUI
 
         private void t_lstAssignmentOverview_SelectedIndexChanged(object sender, EventArgs e)
         {
+            t_wipeGradingPanel();
+
             if (t_lstAssignmentOverview.SelectedItems.Count > 0)
             {
+                Console.WriteLine("Selected");
+
                 ListViewItem item = t_lstClassOverview.SelectedItems[0];
                 string selectedClass = item.Text;
 
@@ -441,19 +449,54 @@ namespace MusicTeacherGUI
                 // Make sure its valid
                 if (studentData.Count > 0)
                 {
+                    Console.WriteLine("Valid student");
+
                     Person student = new Person(studentData);
 
                     item = t_lstAssignmentOverview.SelectedItems[0];
-                    string selectedAssignment = item.Text;
+                    string selectedAssignmentName = item.Text;
 
-                    var subInfo = Submission.GetSubmissionInfoForStudent(selectedAssignment, student.PersonId);
+                    t_pnlGrade.Enabled = true;
+
+                    var subInfo = Submission.GetSubmissionInfoForStudent(selectedAssignmentName, student.PersonId);
 
                     if (subInfo.Count > 0)
                     {
                         Submission sub = new Submission(subInfo);
+
+                        // Activate the link label
+                        LinkLabel.Link link = new LinkLabel.Link();
+                        link.LinkData = sub.FileLocation;
+                        t_linkSubmission.Links.Add(link);
+
+                        // Try to find a grade object for the given assignment and student
+
+                        var assignmentData = Assignment.GetAssignmentRowDataByName(selectedAssignmentName);
+                        Assignment a = new Assignment(assignmentData);
+
+
+                        var data = Grade.GetGradeDataFromAssignment(a.AssignmentId, student.PersonId);
+                        
+                        if (data.Count < 1)
+                        {
+                            Console.WriteLine("Grade data doesnt exist");
+                            return;
+                        }
+
+                        Grade g = new Grade(data);
+
+                        
+
+                        t_txtAssignmentGrade.Text = g.Score.ToString():
+
                     }
                 }
             }
+        }
+
+        private void t_wipeGradingPanel()
+        {
+            t_linkSubmission.Links.Clear();
         }
 
         private void t_btnLogOut_Click(object sender, EventArgs e)
@@ -477,5 +520,21 @@ namespace MusicTeacherGUI
             ConnectedUser.setConnUser();
         }
 
+        private void t_linkSubmission_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            string url;
+            if (e.Link.LinkData != null)
+                url = e.Link.LinkData.ToString();
+            else
+                url = t_linkSubmission.Text.Substring(e.Link.Start, e.Link.Length);
+
+            if (!url.Contains("://"))
+                url = "http://" + url;
+
+            var si = new ProcessStartInfo(url);
+            Process.Start(si);
+            t_linkSubmission.LinkVisited = true;
+
+        }
     }
 }

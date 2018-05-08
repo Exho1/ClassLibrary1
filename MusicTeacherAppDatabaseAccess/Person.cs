@@ -113,12 +113,22 @@ namespace MusicTeacherAppDatabaseAccess
             return null;
         }
 
-        public static List<string> fromFirstNameLastNameFormat( string formatted )
+        public static List<string> fromFirstNameLastNameFormat(string formatted)
         {
             string[] words = formatted.Split(',');
 
-            string firstName = words[1];
+            string firstName = words[1].TrimStart();
             string lastName = words[0];
+
+            if (firstName == null)
+            {
+                firstName = "null";
+            }
+
+            if (lastName == null)
+            {
+                lastName = "null";
+            }
 
             List<string> result = new List<string>();
             using (SqlConnection conn = new SqlConnection())
@@ -126,10 +136,10 @@ namespace MusicTeacherAppDatabaseAccess
                 conn.ConnectionString = "Data Source=(localdb)\\MTADB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;";
                 conn.Open();
 
-                SqlCommand command = new SqlCommand("SELECT * FROM MusicTeacherApp.dbo.Persons WHERE FirstName = @fName AND LastName = @lName", conn);
+                SqlCommand command = new SqlCommand("SELECT * FROM MusicTeacherApp.dbo.Persons WHERE FirstName = @first AND LastName = @last", conn);
 
-                command.Parameters.Add(new SqlParameter("fName", firstName));
-                command.Parameters.Add(new SqlParameter("lName", lastName));
+                command.Parameters.Add(new SqlParameter("first", firstName));
+                command.Parameters.Add(new SqlParameter("last", lastName));
 
                 using (SqlDataReader reader = command.ExecuteReader())
                 {
@@ -145,7 +155,7 @@ namespace MusicTeacherAppDatabaseAccess
                     }
                 }
             }
-            return result
+            return result;
 
         }
     }
