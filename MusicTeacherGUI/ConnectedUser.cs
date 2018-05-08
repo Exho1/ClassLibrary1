@@ -108,7 +108,7 @@ namespace MusicTeacherGUI
         /// <returns></returns>
         public static bool isTeacher()
         {
-            return _p.Role == "t";
+            return _p.Role.ToLower() == "teacher";
         }
 
         /// <summary>
@@ -117,7 +117,7 @@ namespace MusicTeacherGUI
         /// <returns></returns>
         public static bool isStudent()
         {
-            return _p.Role == "s";
+            return _p.Role.ToLower() == "student";
         }
 
         /// <summary>

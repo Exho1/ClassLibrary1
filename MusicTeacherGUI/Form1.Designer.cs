@@ -523,7 +523,7 @@
             this.s_todoAssignments.Location = new System.Drawing.Point(21, 52);
             this.s_todoAssignments.MultiSelect = false;
             this.s_todoAssignments.Name = "s_todoAssignments";
-            this.s_todoAssignments.Size = new System.Drawing.Size(182, 232);
+            this.s_todoAssignments.Size = new System.Drawing.Size(182, 301);
             this.s_todoAssignments.TabIndex = 1;
             this.s_todoAssignments.UseCompatibleStateImageBehavior = false;
             this.s_todoAssignments.SelectedIndexChanged += new System.EventHandler(this.s_todoAssignments_SelectedIndexChanged);

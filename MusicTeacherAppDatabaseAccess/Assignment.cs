@@ -48,7 +48,7 @@ namespace MusicTeacherAppDatabaseAccess
         /// </summary>
         /// <param name="assignmentId"></param>
         /// <returns></returns>
-        public static List<string> GetAssignmentRowData(String assignmentId)
+        public static List<string> GetAssignmentRowDataByID(String assignmentId)
         {
             List<string> result = new List<string>();
             using (SqlConnection conn = new SqlConnection())
@@ -65,6 +65,42 @@ namespace MusicTeacherAppDatabaseAccess
                     while (reader.Read())
                     {
                         
+                        for (int i = 0; i < reader.FieldCount; i++)
+                        {
+                            result.Add(Convert.ToString(reader[i]));
+                        }
+
+
+                    }
+                }
+            }
+            //Console.WriteLine(result);
+            //Console.ReadLine();
+            return result;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="assignmentName"></param>
+        /// <returns></returns>
+        public static List<string> GetAssignmentRowDataByName(String assignmentName)
+        {
+            List<string> result = new List<string>();
+            using (SqlConnection conn = new SqlConnection())
+            {
+                conn.ConnectionString = "Data Source=(localdb)\\MTADB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;";
+                conn.Open();
+
+                SqlCommand command = new SqlCommand("SELECT * FROM MusicTeacherApp.dbo.Assignments WHERE AssignmentName = @assignmentName", conn);
+
+                command.Parameters.Add(new SqlParameter("assignmentName", assignmentName));
+
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+
                         for (int i = 0; i < reader.FieldCount; i++)
                         {
                             result.Add(Convert.ToString(reader[i]));

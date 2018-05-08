@@ -239,6 +239,7 @@ namespace MusicTeacherGUI
 
             //ListViewI selected = s_todoAssignments.SelectedItems[0];
 
+            // Assignment.GetAssignmentRowDataByName
 
         }
 
@@ -255,8 +256,6 @@ namespace MusicTeacherGUI
             }
             else if (current == s_tabAssignments)
             {
-
-
                 List<string> formattedAssignments = new List<string>();
 
                 List<Tuple<string, string>> all = ConnectedUser.getAllAssignments();
