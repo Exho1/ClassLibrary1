@@ -108,6 +108,8 @@ namespace MusicTeacherGUI
             // Set our global user to this new person object
             ConnectedUser.setConnUser(user);
 
+            Util.populateCombobox(s_cmboUploadClass, ConnectedUser.getCourses());
+
             // 
             if (guiView == 's')
             {
@@ -215,7 +217,7 @@ namespace MusicTeacherGUI
         private void s_cmboUploadClass_SelectedIndexChanged(object sender, EventArgs e)
         {
             // Get the class we selected
-            string selected = s_cmboUploadClass.SelectedText;
+            string selected = s_cmboUploadClass.SelectedItem.ToString();
 
             // Populate the Assignments combo box
             Util.populateCombobox(s_cmboUploadAssignment, ConnectedUser.getAssignmentsFromCourse(selected));
@@ -282,7 +284,7 @@ namespace MusicTeacherGUI
             if (pnlStudent.Visible)
             {
                 // Fills the class combo box with the course list
-                Util.populateCombobox(s_cmboUploadClass, ConnectedUser.getCourses());
+                //Util.populateCombobox(s_cmboUploadClass, ConnectedUser.getCourses());
             }
         }
 

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.pnlLogin = new System.Windows.Forms.Panel();
+            this.label32 = new System.Windows.Forms.Label();
             this.btn_Login = new System.Windows.Forms.Button();
             this.label27 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
@@ -41,6 +42,7 @@
             this.pnlStudent = new System.Windows.Forms.Panel();
             this.s_tabCntrl = new System.Windows.Forms.TabControl();
             this.s_tabHome = new System.Windows.Forms.TabPage();
+            this.s_btnLogOut = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -80,6 +82,7 @@
             this.s_fileSelector = new System.Windows.Forms.OpenFileDialog();
             this.t_tabCntrlTeacher = new System.Windows.Forms.TabControl();
             this.t_tabHome = new System.Windows.Forms.TabPage();
+            this.t_btnLogOut = new System.Windows.Forms.Button();
             this.t_btnCreate = new System.Windows.Forms.Button();
             this.t_btnGrade = new System.Windows.Forms.Button();
             this.t_btnClassView = new System.Windows.Forms.Button();
@@ -127,9 +130,6 @@
             this.label19 = new System.Windows.Forms.Label();
             this.listView2 = new System.Windows.Forms.ListView();
             this.pnlTeacher = new System.Windows.Forms.Panel();
-            this.label32 = new System.Windows.Forms.Label();
-            this.s_btnLogOut = new System.Windows.Forms.Button();
-            this.t_btnLogOut = new System.Windows.Forms.Button();
             this.pnlLogin.SuspendLayout();
             this.pnlStudent.SuspendLayout();
             this.s_tabCntrl.SuspendLayout();
@@ -167,6 +167,15 @@
             this.pnlLogin.Name = "pnlLogin";
             this.pnlLogin.Size = new System.Drawing.Size(675, 434);
             this.pnlLogin.TabIndex = 0;
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(7, 414);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(123, 13);
+            this.label32.TabIndex = 9;
+            this.label32.Text = "studentjd1 + teacherws1";
             // 
             // btn_Login
             // 
@@ -229,6 +238,7 @@
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(134, 20);
             this.txtUsername.TabIndex = 2;
+            this.txtUsername.Text = "studentjd1";
             // 
             // btnTeachView
             // 
@@ -288,6 +298,17 @@
             this.s_tabHome.TabIndex = 0;
             this.s_tabHome.Text = "Home";
             this.s_tabHome.UseVisualStyleBackColor = true;
+            // 
+            // s_btnLogOut
+            // 
+            this.s_btnLogOut.Location = new System.Drawing.Point(261, 255);
+            this.s_btnLogOut.Name = "s_btnLogOut";
+            this.s_btnLogOut.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.s_btnLogOut.Size = new System.Drawing.Size(102, 29);
+            this.s_btnLogOut.TabIndex = 6;
+            this.s_btnLogOut.Text = "Log Out";
+            this.s_btnLogOut.UseVisualStyleBackColor = true;
+            this.s_btnLogOut.Click += new System.EventHandler(this.s_btnLogOut_Click);
             // 
             // button3
             // 
@@ -695,6 +716,17 @@
             this.t_tabHome.TabIndex = 0;
             this.t_tabHome.Text = "Home";
             this.t_tabHome.UseVisualStyleBackColor = true;
+            // 
+            // t_btnLogOut
+            // 
+            this.t_btnLogOut.Location = new System.Drawing.Point(262, 252);
+            this.t_btnLogOut.Name = "t_btnLogOut";
+            this.t_btnLogOut.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.t_btnLogOut.Size = new System.Drawing.Size(102, 29);
+            this.t_btnLogOut.TabIndex = 7;
+            this.t_btnLogOut.Text = "Log Out";
+            this.t_btnLogOut.UseVisualStyleBackColor = true;
+            this.t_btnLogOut.Click += new System.EventHandler(this.t_btnLogOut_Click);
             // 
             // t_btnCreate
             // 
@@ -1162,45 +1194,14 @@
             this.pnlTeacher.TabIndex = 3;
             this.pnlTeacher.Visible = false;
             // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(7, 414);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(123, 13);
-            this.label32.TabIndex = 9;
-            this.label32.Text = "studentjd1 + teacherws1";
-            // 
-            // s_btnLogOut
-            // 
-            this.s_btnLogOut.Location = new System.Drawing.Point(261, 255);
-            this.s_btnLogOut.Name = "s_btnLogOut";
-            this.s_btnLogOut.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.s_btnLogOut.Size = new System.Drawing.Size(102, 29);
-            this.s_btnLogOut.TabIndex = 6;
-            this.s_btnLogOut.Text = "Log Out";
-            this.s_btnLogOut.UseVisualStyleBackColor = true;
-            this.s_btnLogOut.Click += new System.EventHandler(this.s_btnLogOut_Click);
-            // 
-            // t_btnLogOut
-            // 
-            this.t_btnLogOut.Location = new System.Drawing.Point(262, 252);
-            this.t_btnLogOut.Name = "t_btnLogOut";
-            this.t_btnLogOut.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.t_btnLogOut.Size = new System.Drawing.Size(102, 29);
-            this.t_btnLogOut.TabIndex = 7;
-            this.t_btnLogOut.Text = "Log Out";
-            this.t_btnLogOut.UseVisualStyleBackColor = true;
-            this.t_btnLogOut.Click += new System.EventHandler(this.t_btnLogOut_Click);
-            // 
             // frmApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(699, 458);
+            this.Controls.Add(this.pnlLogin);
             this.Controls.Add(this.pnlStudent);
             this.Controls.Add(this.pnlTeacher);
-            this.Controls.Add(this.pnlLogin);
             this.Name = "frmApp";
             this.Text = "Music Teacher Application";
             this.Load += new System.EventHandler(this.frmApp_Load);

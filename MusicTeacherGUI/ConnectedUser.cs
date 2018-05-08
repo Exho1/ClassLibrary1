@@ -32,7 +32,12 @@ namespace MusicTeacherGUI
         private static void preload()
         {
 
+            _courses = new Dictionary<string, List<string>>();
+            _students = new Dictionary<string, List<string>>();
+
             List<string> c;
+
+            Console.WriteLine("Is teacher " + isTeacher());
 
             if (isTeacher())
             {
@@ -43,7 +48,10 @@ namespace MusicTeacherGUI
             {
                 // Get all the courses the student is in
                 c = Course.GetStudentCourseList(_p.PersonId);
+
+                Console.WriteLine(c);
             }
+
 
 
             // Add each course to our dictionary under the format of courseName, List of assignments
@@ -51,7 +59,10 @@ namespace MusicTeacherGUI
             {
                 for (int i = 0; i < c.Count; i++)
                 {
-                    _courses.Add(c[i].ToLower(), Course.GetCourseAssignmentList(c[i]));
+                    string cname = c[i];
+                    var list = Course.GetCourseAssignmentList(cname);
+
+                    _courses.Add(cname.ToString(), list);
                 }
             }
 
@@ -81,6 +92,8 @@ namespace MusicTeacherGUI
         public static void setConnUser(Person p = null)
         {
             _p = p;
+
+            Console.WriteLine("Setting connected user" + p.PersonId);
 
             if (p != null)
             {
@@ -147,7 +160,7 @@ namespace MusicTeacherGUI
         {
             course = course.ToLower();
 
-            return _students[course];
+            return _students.FirstOrDefault(x => x.Key.ToLower() == course).Value;
         }
 
         /// <summary>
@@ -159,7 +172,7 @@ namespace MusicTeacherGUI
         {
             course = course.ToLower();
 
-            return _courses[course];
+            return _courses.FirstOrDefault(x => x.Key.ToLower() == course).Value;
         }
 
         /// <summary>
