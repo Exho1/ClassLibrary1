@@ -75,10 +75,10 @@ namespace MusicTeacherGUI
             string personID = txtUsername.Text.ToLower();
 
             // Make sure this isn't empty
-            if (personID != null)
+            /*if (personID != null)
             {
                 return;
-            }
+            }*/
 
             if (guiView == 's')
             {
@@ -118,11 +118,6 @@ namespace MusicTeacherGUI
         }
 
         private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
@@ -289,6 +284,11 @@ namespace MusicTeacherGUI
             }
         }
 
+        private void s_btnLogOut_Click(object sender, EventArgs e)
+        {
+            logout();
+        }
+
         /*
          * ///////////////////////////////////
          *  END STUDENT CODE
@@ -320,10 +320,25 @@ namespace MusicTeacherGUI
 
         }
 
+        private void t_btnLogOut_Click(object sender, EventArgs e)
+        {
+            logout();
+        }
+
         /*
          * ///////////////////////////////////
          *  END TEACHER CODE
          * ///////////////////////////////////
          */
+
+        private void logout()
+        {
+            pnlLogin.Visible = true;
+            pnlTeacher.Visible = false;
+            pnlStudent.Visible = false;
+
+            // Wipe the connected user
+            ConnectedUser.setConnUser();
+        }
     }
 }

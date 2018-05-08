@@ -11,7 +11,7 @@ namespace MusicTeacherAppDatabaseAccess
     {
         public String SubmissionId { get; set; }
         public String PersonId { get; set; }
-        public String ClassName { set; get; }
+        public String CourseName { set; get; }
         public String AssignmentName { set; get; }
         public String FileLocation { set; get; }
         public DateTime SubmissionDateTime { set; get; }
@@ -20,7 +20,7 @@ namespace MusicTeacherAppDatabaseAccess
         {
             SubmissionId = submissionId;
             PersonId = personId;
-            ClassName = className;
+            CourseName = className;
             AssignmentName = assignmentName;
             FileLocation = fileLocation;
             SubmissionDateTime = submissionDateTime;
@@ -30,12 +30,17 @@ namespace MusicTeacherAppDatabaseAccess
         {
             SubmissionId = list[0];
             PersonId = list[1];
-            ClassName = list[2];
+            CourseName = list[2];
             AssignmentName = list[3];
             FileLocation = list[4];
             SubmissionDateTime = Convert.ToDateTime(list[5]);
         }
 
+        /// <summary>
+        /// Gets all submission data for the given submission id
+        /// </summary>
+        /// <param name="submissionId"></param>
+        /// <returns></returns>
         public static List<string> GetSubmissionRowData(String submissionId)
         {
             List<string> result = new List<string>();
@@ -67,7 +72,10 @@ namespace MusicTeacherAppDatabaseAccess
             return result;
         }
 
-
+        /// <summary>
+        /// Inserts a Submission object into the database
+        /// </summary>
+        /// <param name="submission"></param>
         public static void InsertSubmissionData(Submission submission)
         {
             using (SqlConnection conn = new SqlConnection())
@@ -82,7 +90,7 @@ namespace MusicTeacherAppDatabaseAccess
                 
                 insertCommand.Parameters.Add(new SqlParameter("0", newEntry.SubmissionId));
                 insertCommand.Parameters.Add(new SqlParameter("1", newEntry.PersonId));
-                insertCommand.Parameters.Add(new SqlParameter("2", newEntry.ClassName));
+                insertCommand.Parameters.Add(new SqlParameter("2", newEntry.CourseName));
                 insertCommand.Parameters.Add(new SqlParameter("3", newEntry.AssignmentName));
                 insertCommand.Parameters.Add(new SqlParameter("4", newEntry.FileLocation));
                 insertCommand.Parameters.Add(new SqlParameter("5", newEntry.SubmissionDateTime));

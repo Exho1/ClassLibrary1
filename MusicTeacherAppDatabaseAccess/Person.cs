@@ -33,6 +33,11 @@ namespace MusicTeacherAppDatabaseAccess
             Role = list[4];
         }
 
+        /// <summary>
+        /// Returns all info for a person matching the given person id
+        /// </summary>
+        /// <param name="personId"></param>
+        /// <returns></returns>
         public static List<string> GetPersonRowData(String personId)
         {
             List<string> result = new List<string>();
@@ -64,7 +69,7 @@ namespace MusicTeacherAppDatabaseAccess
             return result;
         }
 
-
+        //
         public static void InsertPersonData(Person person)
         {
             using (SqlConnection conn = new SqlConnection())

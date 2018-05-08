@@ -127,6 +127,9 @@
             this.label19 = new System.Windows.Forms.Label();
             this.listView2 = new System.Windows.Forms.ListView();
             this.pnlTeacher = new System.Windows.Forms.Panel();
+            this.label32 = new System.Windows.Forms.Label();
+            this.s_btnLogOut = new System.Windows.Forms.Button();
+            this.t_btnLogOut = new System.Windows.Forms.Button();
             this.pnlLogin.SuspendLayout();
             this.pnlStudent.SuspendLayout();
             this.s_tabCntrl.SuspendLayout();
@@ -150,6 +153,7 @@
             // 
             // pnlLogin
             // 
+            this.pnlLogin.Controls.Add(this.label32);
             this.pnlLogin.Controls.Add(this.btn_Login);
             this.pnlLogin.Controls.Add(this.label27);
             this.pnlLogin.Controls.Add(this.label26);
@@ -272,6 +276,7 @@
             // 
             // s_tabHome
             // 
+            this.s_tabHome.Controls.Add(this.s_btnLogOut);
             this.s_tabHome.Controls.Add(this.button3);
             this.s_tabHome.Controls.Add(this.button2);
             this.s_tabHome.Controls.Add(this.button1);
@@ -678,6 +683,7 @@
             // 
             // t_tabHome
             // 
+            this.t_tabHome.Controls.Add(this.t_btnLogOut);
             this.t_tabHome.Controls.Add(this.t_btnCreate);
             this.t_tabHome.Controls.Add(this.t_btnGrade);
             this.t_tabHome.Controls.Add(this.t_btnClassView);
@@ -1156,14 +1162,45 @@
             this.pnlTeacher.TabIndex = 3;
             this.pnlTeacher.Visible = false;
             // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(7, 414);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(123, 13);
+            this.label32.TabIndex = 9;
+            this.label32.Text = "studentjd1 + teacherws1";
+            // 
+            // s_btnLogOut
+            // 
+            this.s_btnLogOut.Location = new System.Drawing.Point(261, 255);
+            this.s_btnLogOut.Name = "s_btnLogOut";
+            this.s_btnLogOut.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.s_btnLogOut.Size = new System.Drawing.Size(102, 29);
+            this.s_btnLogOut.TabIndex = 6;
+            this.s_btnLogOut.Text = "Log Out";
+            this.s_btnLogOut.UseVisualStyleBackColor = true;
+            this.s_btnLogOut.Click += new System.EventHandler(this.s_btnLogOut_Click);
+            // 
+            // t_btnLogOut
+            // 
+            this.t_btnLogOut.Location = new System.Drawing.Point(262, 252);
+            this.t_btnLogOut.Name = "t_btnLogOut";
+            this.t_btnLogOut.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.t_btnLogOut.Size = new System.Drawing.Size(102, 29);
+            this.t_btnLogOut.TabIndex = 7;
+            this.t_btnLogOut.Text = "Log Out";
+            this.t_btnLogOut.UseVisualStyleBackColor = true;
+            this.t_btnLogOut.Click += new System.EventHandler(this.t_btnLogOut_Click);
+            // 
             // frmApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(699, 458);
+            this.Controls.Add(this.pnlStudent);
             this.Controls.Add(this.pnlTeacher);
             this.Controls.Add(this.pnlLogin);
-            this.Controls.Add(this.pnlStudent);
             this.Name = "frmApp";
             this.Text = "Music Teacher Application";
             this.Load += new System.EventHandler(this.frmApp_Load);
@@ -1306,6 +1343,9 @@
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.TextBox s_txtAssignmentDueDate;
         private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Button s_btnLogOut;
+        private System.Windows.Forms.Button t_btnLogOut;
     }
 }
 

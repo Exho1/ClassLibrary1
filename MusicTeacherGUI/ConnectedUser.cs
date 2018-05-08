@@ -66,15 +66,31 @@ namespace MusicTeacherGUI
         }
 
         /// <summary>
-        /// Sets the current connected user
+        /// Unloads all the stored information for the connected user
         /// </summary>
-        /// <param name="p">Person object either from the database or created</param>
-        public static void setConnUser(Person p)
+        private static void unload()
+        {
+            _courses = null;
+            _students = null;
+        }
+
+        /// <summary>
+        /// Sets the connected user (set null to reset)
+        /// </summary>
+        /// <param name="p">Person object</param>
+        public static void setConnUser(Person p = null)
         {
             _p = p;
 
-            // Call the preload
-            preload();
+            if (p != null)
+            {
+                // Call the preload
+                preload();
+            }
+            else
+            {
+                unload();
+            }
         }
 
         /// <summary>
