@@ -254,6 +254,7 @@
             this.pnlStudent.Size = new System.Drawing.Size(675, 434);
             this.pnlStudent.TabIndex = 2;
             this.pnlStudent.Visible = false;
+            this.pnlStudent.VisibleChanged += new System.EventHandler(this.pnlStudent_VisibleChanged);
             // 
             // s_tabCntrl
             // 
@@ -267,6 +268,7 @@
             this.s_tabCntrl.SelectedIndex = 0;
             this.s_tabCntrl.Size = new System.Drawing.Size(675, 434);
             this.s_tabCntrl.TabIndex = 0;
+            this.s_tabCntrl.TabIndexChanged += new System.EventHandler(this.s_tabCntrl_TabIndexChanged);
             // 
             // s_tabHome
             // 

@@ -171,8 +171,12 @@ namespace MusicTeacherGUI
 
         private async void s_btnFile_ClickAsync(object sender, EventArgs e)
         {
+            // Create a new submission object
+            Submission upload = new Submission("1", ConnectedUser.getID(), s_cmboUploadClass.SelectedText, s_cmboUploadAssignment.SelectedText, "null", DateTime.Now);
+
             s_rchFileDetails.AppendText("\nStarting upload...\n");
 
+            // Uploads the video file and gets the url
             string uploadURL = await studentUploader.UploadVideoFile(s_fileSelector.FileName, "Uploaded this bear from our app.mp4");
 
             // This would involve some multithreading
@@ -182,6 +186,12 @@ namespace MusicTeacherGUI
             {
                 s_rchFileDetails.AppendText(prog(""));
             }*/
+
+            // Sets the url to our object
+            upload.FileLocation = uploadURL;
+
+            // Uploads the object to the database
+            Submission.InsertSubmissionData(upload);
         
             s_rchFileDetails.AppendText("Upload complete! \n");
         }
@@ -207,13 +217,40 @@ namespace MusicTeacherGUI
 
         private void s_cmboUploadClass_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // When we select a class, populate the assignments dropdown
-            //s_cmboUploadAssignment
+            // Get the class we selected
+            string selected = s_cmboUploadClass.SelectedText;
+
+            // Populate the Assignments combo box
+            Util.populateCombobox(s_cmboUploadAssignment, ConnectedUser.getAssignmentsFromCourse(selected));
+
         }
 
         private void s_cmboUploadAssignment_SelectedIndexChanged(object sender, EventArgs e)
         {
             // When we select a class and assignment, we are now good to go for the submit
+        }
+
+        // Student tab handler
+        private void s_tabCntrl_TabIndexChanged(object sender, EventArgs e)
+        {
+            // Get the current tab
+            TabPage current = s_tabCntrl.SelectedTab;
+
+            if (current == s_tabUpload)
+            {
+                // Populate the Classes combo box
+                Util.populateCombobox(s_cmboUploadClass, ConnectedUser.getCourses());
+            }
+        }
+
+        // Student view loading handler
+        private void pnlStudent_VisibleChanged(object sender, EventArgs e)
+        {
+            if (pnlStudent.Visible)
+            {
+                // Fills the class combo box with the course list
+                Util.populateCombobox(s_cmboUploadClass, ConnectedUser.getCourses());
+            }
         }
     }
 }

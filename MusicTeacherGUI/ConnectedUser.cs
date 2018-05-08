@@ -15,7 +15,15 @@ namespace MusicTeacherGUI
     {
 
         private static Person _p;
+
+        /// <summary>
+        /// Key: Course name, Value: List of assignments
+        /// </summary>
         private static Dictionary<string, List<string>> _courses;
+
+        /// <summary>
+        /// Key: Course name, Value: List of students
+        /// </summary>
         private static Dictionary<string, List<string>> _students;
 
         /// <summary>
@@ -97,6 +105,15 @@ namespace MusicTeacherGUI
         }
 
         /// <summary>
+        /// Returns the connected user's person id
+        /// </summary>
+        /// <returns></returns>
+        public static string getID()
+        {
+            return _p.PersonId;
+        }
+
+        /// <summary>
         /// Returns a list of courses the connected user is in
         /// </summary>
         /// <returns>List with each course name as a value</returns>
@@ -115,6 +132,18 @@ namespace MusicTeacherGUI
             course = course.ToLower();
 
             return _students[course];
+        }
+
+        /// <summary>
+        /// Returns a list of assignments for the given course
+        /// </summary>
+        /// <param name="course"></param>
+        /// <returns></returns>
+        public static List<string> getAssignmentsFromCourse(string course)
+        {
+            course = course.ToLower();
+
+            return _courses[course];
         }
     }
 }
