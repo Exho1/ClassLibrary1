@@ -94,7 +94,7 @@ namespace MusicTeacherAppDatabaseAccess
                 insertCommand.Parameters.Add(new SqlParameter("4", newEntry.IsGraded));
 
 
-                //Console.WriteLine("Commands executed! Total rows affected are " + insertCommand.ExecuteNonQuery());
+                Console.WriteLine("Commands executed! Total rows affected are " + insertCommand.ExecuteNonQuery());
                 //Console.WriteLine("Done! Press enter to move to the next step");
                 //Console.ReadLine();
 
@@ -109,7 +109,7 @@ namespace MusicTeacherAppDatabaseAccess
                 conn.ConnectionString = "Data Source=(localdb)\\MTADB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;";
                 conn.Open();
 
-                SqlCommand command = new SqlCommand("SELECT * FROM MusicTeacherApp.dbo.Grades WHERE AssignmentId = @asssignment AND PersonId = @person", conn);
+                SqlCommand command = new SqlCommand("SELECT * FROM MusicTeacherApp.dbo.Grades WHERE AssignmentId = @assignment AND PersonId = @person", conn);
 
                 command.Parameters.Add(new SqlParameter("assignment", assignmentID));
                 command.Parameters.Add(new SqlParameter("person", personID));
@@ -157,10 +157,25 @@ namespace MusicTeacherAppDatabaseAccess
 
 
 
-                //Console.WriteLine("Commands executed! Total rows affected are " + insertCommand.ExecuteNonQuery());
+                Console.WriteLine("Commands executed! Total rows affected are " + updateCommand.ExecuteNonQuery());
                 //Console.WriteLine("Done! Press enter to move to the next step");
                 //Console.ReadLine();
 
+            }
+        }
+
+        public static int GetTotalGrades()
+        {
+            using (SqlConnection conn = new SqlConnection())
+            {
+                conn.ConnectionString = "Data Source=(localdb)\\MTADB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;";
+                conn.Open();
+
+                SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM MusicTeacherApp.dbo.Grades", conn);
+
+                int count = (int)cmd.ExecuteScalar();
+
+                return count;
             }
         }
     }

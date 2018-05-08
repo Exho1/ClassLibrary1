@@ -485,18 +485,43 @@ namespace MusicTeacherGUI
 
                         Grade g = new Grade(data);
 
-                        
-
-                        t_txtAssignmentGrade.Text = g.Score.ToString():
-
+                        t_txtAssignmentGrade.Text = g.Score.ToString();
+                        t_rchAssignmentComments.Text = a.Comments;
                     }
                 }
             }
         }
 
+        private void t_btnGradeChangeSave_Click(object sender, EventArgs e)
+        {
+            int total = Grade.GetTotalGrades();
+            total++;
+
+            ListViewItem item = t_lstAssignmentOverview.SelectedItems[0];
+            string selectedAssignmentName = item.Text;
+            var assignmentData = Assignment.GetAssignmentRowDataByName(selectedAssignmentName);
+            Assignment a = new Assignment(assignmentData);
+
+            item = t_lstStudentOverview.SelectedItems[0];
+            string selectedStudent = item.Text;
+            var studentData = Person.fromFirstNameLastNameFormat(selectedStudent);
+            Person student = new Person(studentData);
+
+            int grade = Convert.ToInt32(t_txtAssignmentGrade.Text);
+
+            Grade newGrade = new Grade(total.ToString(), a.AssignmentId, grade, student.PersonId, "true");
+
+            Grade.InsertGradeData(newGrade);
+
+            Console.WriteLine("Submitted new grade data successfully");
+        }
+
         private void t_wipeGradingPanel()
         {
             t_linkSubmission.Links.Clear();
+            t_txtAssignmentGrade.Text = "";
+            t_rchAssignmentComments.Text = "";
+            t_chkLateBox.Checked = false;
         }
 
         private void t_btnLogOut_Click(object sender, EventArgs e)

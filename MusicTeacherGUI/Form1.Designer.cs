@@ -93,7 +93,7 @@
             this.t_btnGradeChangeCancel = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.richTextBox2 = new System.Windows.Forms.RichTextBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.t_chkLateBox = new System.Windows.Forms.CheckBox();
             this.label10 = new System.Windows.Forms.Label();
             this.t_btnGradeChangeSave = new System.Windows.Forms.Button();
             this.t_txtAssignmentGrade = new System.Windows.Forms.TextBox();
@@ -797,7 +797,7 @@
             this.t_pnlGrade.Controls.Add(this.t_btnGradeChangeCancel);
             this.t_pnlGrade.Controls.Add(this.label11);
             this.t_pnlGrade.Controls.Add(this.richTextBox2);
-            this.t_pnlGrade.Controls.Add(this.checkBox1);
+            this.t_pnlGrade.Controls.Add(this.t_chkLateBox);
             this.t_pnlGrade.Controls.Add(this.label10);
             this.t_pnlGrade.Controls.Add(this.t_btnGradeChangeSave);
             this.t_pnlGrade.Controls.Add(this.t_txtAssignmentGrade);
@@ -845,15 +845,15 @@
             this.richTextBox2.TabIndex = 12;
             this.richTextBox2.Text = "";
             // 
-            // checkBox1
+            // t_chkLateBox
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(6, 90);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(123, 17);
-            this.checkBox1.TabIndex = 10;
-            this.checkBox1.Text = "Turned in late (-10%)";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.t_chkLateBox.AutoSize = true;
+            this.t_chkLateBox.Location = new System.Drawing.Point(6, 90);
+            this.t_chkLateBox.Name = "t_chkLateBox";
+            this.t_chkLateBox.Size = new System.Drawing.Size(123, 17);
+            this.t_chkLateBox.TabIndex = 10;
+            this.t_chkLateBox.Text = "Turned in late (-10%)";
+            this.t_chkLateBox.UseVisualStyleBackColor = true;
             // 
             // label10
             // 
@@ -873,6 +873,7 @@
             this.t_btnGradeChangeSave.TabIndex = 6;
             this.t_btnGradeChangeSave.Text = "Save";
             this.t_btnGradeChangeSave.UseVisualStyleBackColor = true;
+            this.t_btnGradeChangeSave.Click += new System.EventHandler(this.t_btnGradeChangeSave_Click);
             // 
             // t_txtAssignmentGrade
             // 
@@ -1297,7 +1298,7 @@
         private System.Windows.Forms.Button t_btnGradeChangeCancel;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.RichTextBox richTextBox2;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox t_chkLateBox;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TabPage t_tabCreateAssignment;
         private System.Windows.Forms.Button t_btnCreateAssignment;
