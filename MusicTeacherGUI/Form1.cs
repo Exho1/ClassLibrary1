@@ -53,7 +53,7 @@ namespace MusicTeacherGUI
 
         private void frmApp_KeyPress(object sender, KeyPressEventArgs e)
         {
-            
+
         }
 
         private void btnStudentView_Click(object sender, EventArgs e)
@@ -113,12 +113,12 @@ namespace MusicTeacherGUI
             // 
             if (guiView == 's')
             {
-                
+
 
             }
             else if (guiView == 't')
             {
-                
+
             }
         }
 
@@ -129,7 +129,7 @@ namespace MusicTeacherGUI
 
         private void s_tabUpload_Click(object sender, EventArgs e)
         {
-            
+
         }
 
 
@@ -173,7 +173,7 @@ namespace MusicTeacherGUI
 
             // Give feedback about the file before uploading
             s_rchFileDetails.AppendText("Selected: " + f.Name + "\n");
-            s_rchFileDetails.AppendText("File Size: " + Math.Round(f.Length / 1048576f, 1)  + " mb \n");
+            s_rchFileDetails.AppendText("File Size: " + Math.Round(f.Length / 1048576f, 1) + " mb \n");
             s_rchFileDetails.AppendText("Ready to upload! \n");
         }
 
@@ -210,7 +210,7 @@ namespace MusicTeacherGUI
 
             // Uploads the object to the database
             Submission.InsertSubmissionData(upload);
-        
+
             s_rchFileDetails.AppendText("Upload complete! \n");
         }
 
@@ -321,17 +321,78 @@ namespace MusicTeacherGUI
                 // Populate the list view with the contents
                 Util.populateListView(s_todoAssignments, formattedAssignments);
             }
+            else if (current == s_tabGrades)
+            {
+                string currentID = ConnectedUser.getID();
+
+                Util.populateCombobox(s_cmboGradesClass, Course.GetStudentCourseList(currentID));
+
+            }
         }
 
         // Student view loading handler
         private void pnlStudent_VisibleChanged(object sender, EventArgs e)
         {
-            if (pnlStudent.Visible)
+
+        }
+
+        private void s_cmboGradesClass_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string selected = s_cmboGradesClass.SelectedItem.ToString();
+
+            var assignments = Course.GetCourseAssignmentList(selected);
+
+            Util.populateListView(s_listGradesAssignments, assignments);
+        }
+
+        private void s_listGradesAssignments_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (s_listGradesAssignments.SelectedItems.Count > 0)
             {
-                // Fills the class combo box with the course list
-                //Util.populateCombobox(s_cmboUploadClass, ConnectedUser.getCourses());
+                Console.WriteLine("Selected");
+
+                string selectedClass = s_cmboGradesClass.SelectedItem.ToString();
+
+                ListViewItem item = s_listGradesAssignments.SelectedItems[0];
+                string assignmentName = item.Text;
+
+                var assignData = Assignment.GetAssignmentRowDataByName(assignmentName);
+                Assignment assigned = new Assignment(assignData);
+
+                if (assignData.Count < 1)
+                {
+                    Console.WriteLine("Invalid assignment data");
+                    return;
+                }
+
+                var gradeData = Grade.GetGradeDataFromAssignment(assigned.AssignmentId, ConnectedUser.getID());
+
+                if (gradeData.Count < 1)
+                {
+                    Console.WriteLine("Invalid grade data");
+                    return;
+                }
+
+                var subInfo = Submission.GetSubmissionInfoForStudent(assigned.AssignmentId, ConnectedUser.getID());
+
+                if (subInfo.Count < 1)
+                {
+                    Console.WriteLine("Invalid submission info");
+                    return;
+                }
+                Grade g = new Grade(gradeData);
+                Submission sub = new Submission(subInfo);
+
+                LinkLabel.Link link = new LinkLabel.Link();
+                link.LinkData = sub.FileLocation;
+                s_linkAssignmentURL.Links.Add(link);
+
+                s_txtAssignmentGrade.Text = g.Score.ToString();
+                s_rchInstructorComments.Text = assigned.Comments;
             }
         }
+    
+
 
         private void s_btnLogOut_Click(object sender, EventArgs e)
         {
@@ -560,6 +621,22 @@ namespace MusicTeacherGUI
             Process.Start(si);
             t_linkSubmission.LinkVisited = true;
 
+        }
+
+        private void s_linkAssignmentURL_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            string url;
+            if (e.Link.LinkData != null)
+                url = e.Link.LinkData.ToString();
+            else
+                url = s_linkAssignmentURL.Text.Substring(e.Link.Start, e.Link.Length);
+
+            if (!url.Contains("://"))
+                url = "http://" + url;
+
+            var si = new ProcessStartInfo(url);
+            Process.Start(si);
+            s_linkAssignmentURL.LinkVisited = true;
         }
     }
 }
