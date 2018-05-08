@@ -1199,9 +1199,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(699, 458);
-            this.Controls.Add(this.pnlLogin);
             this.Controls.Add(this.pnlStudent);
             this.Controls.Add(this.pnlTeacher);
+            this.Controls.Add(this.pnlLogin);
             this.Name = "frmApp";
             this.Text = "Music Teacher Application";
             this.Load += new System.EventHandler(this.frmApp_Load);
