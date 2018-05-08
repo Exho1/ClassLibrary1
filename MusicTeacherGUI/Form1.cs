@@ -190,7 +190,7 @@ namespace MusicTeacherGUI
             id++;
 
             // Create a new submission object
-            Submission upload = new Submission(id.ToString(), ConnectedUser.getID(), s_cmboUploadClass.SelectedText, s_cmboUploadAssignment.SelectedText, "null", DateTime.Now);
+            Submission upload = new Submission(id.ToString(), ConnectedUser.getID(), s_cmboUploadClass.SelectedItem.ToString(), s_cmboUploadAssignment.SelectedItem.ToString(), "null", DateTime.Now);
 
             s_rchFileDetails.AppendText("\nStarting upload...\n");
 
