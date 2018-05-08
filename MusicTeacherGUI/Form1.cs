@@ -132,6 +132,15 @@ namespace MusicTeacherGUI
             
         }
 
+
+
+
+        /*
+         * ///////////////////////////////////
+         *  START STUDENT CODE
+         * ///////////////////////////////////
+         */
+
         // Opens the file selector
         private void button5_Click(object sender, EventArgs e)
         {
@@ -205,16 +214,6 @@ namespace MusicTeacherGUI
             s_btnFileUpload.Enabled = false;
         }
 
-        private void t_tabOverview_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void t_btnGrade_Click(object sender, EventArgs e)
-        {
-            t_tabCntrlTeacher.SelectedTab = t_tabGrade;
-        }
-
         private void s_cmboUploadClass_SelectedIndexChanged(object sender, EventArgs e)
         {
             // Get the class we selected
@@ -242,7 +241,7 @@ namespace MusicTeacherGUI
 
             //ListViewI selected = s_todoAssignments.SelectedItems[0];
 
-            
+
         }
 
         // Student tab handler
@@ -289,5 +288,42 @@ namespace MusicTeacherGUI
                 Util.populateCombobox(s_cmboUploadClass, ConnectedUser.getCourses());
             }
         }
+
+        /*
+         * ///////////////////////////////////
+         *  END STUDENT CODE
+         * ///////////////////////////////////
+         */
+
+
+
+
+
+        /*
+         * ///////////////////////////////////
+         *  START TEACHER CODE
+         * ///////////////////////////////////
+         */
+
+        private void t_tabOverview_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void t_btnGrade_Click(object sender, EventArgs e)
+        {
+            t_tabCntrlTeacher.SelectedTab = t_tabGrade;
+        }
+        // Teacher tab handler
+        private void t_tabCntrlTeacher_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        /*
+         * ///////////////////////////////////
+         *  END TEACHER CODE
+         * ///////////////////////////////////
+         */
     }
 }
