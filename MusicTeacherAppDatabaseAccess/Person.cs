@@ -98,5 +98,55 @@ namespace MusicTeacherAppDatabaseAccess
 
             }
         }
+
+        public static string GetNameFromID( string personId )
+        {
+            var data = GetPersonRowData(personId);
+
+            if (data.Count > 0)
+            {
+                Person p = new Person(data);
+
+                return p.LastName + ", " + p.FirstName;
+            }
+
+            return null;
+        }
+
+        public static List<string> fromFirstNameLastNameFormat( string formatted )
+        {
+            string[] words = formatted.Split(',');
+
+            string firstName = words[1];
+            string lastName = words[0];
+
+            List<string> result = new List<string>();
+            using (SqlConnection conn = new SqlConnection())
+            {
+                conn.ConnectionString = "Data Source=(localdb)\\MTADB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;";
+                conn.Open();
+
+                SqlCommand command = new SqlCommand("SELECT * FROM MusicTeacherApp.dbo.Persons WHERE FirstName = @fName AND LastName = @lName", conn);
+
+                command.Parameters.Add(new SqlParameter("fName", firstName));
+                command.Parameters.Add(new SqlParameter("lName", lastName));
+
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+
+                        for (int i = 0; i < reader.FieldCount; i++)
+                        {
+                            result.Add(Convert.ToString(reader[i]));
+                        }
+
+
+                    }
+                }
+            }
+            return result
+
+        }
     }
 }

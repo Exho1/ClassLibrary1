@@ -384,11 +384,75 @@ namespace MusicTeacherGUI
         {
             if (t_lstClassOverview.SelectedItems.Count > 0)
             {
-                ListViewItem item = t_lstClassOverview.SelectedItems[0];
+                // Clear the previous ones
+                t_lstStudentOverview.Items.Clear();
+                t_lstAssignmentOverview.Items.Clear();
 
+                // Get the selected class
+                ListViewItem item = t_lstClassOverview.SelectedItems[0];
                 string selectedClass = item.Text;
 
-                Util.populateListView(t_lstStudentOverview, Course.GetCourseStudentList(selectedClass));
+                List<string> studentIDs = Course.GetCourseStudentList(selectedClass);
+
+                // Lambda to convert the list of student ids to a list of student names
+                //studentIDs.ForEach<string>(p => Person.GetNameFromID(p));
+
+                List<string> studentNames = new List<string>();
+
+                foreach(string id in studentIDs)
+                {
+                    studentNames.Add(Person.GetNameFromID(id));
+                }
+
+                studentNames.Sort();
+
+                // Populate the students table
+                Util.populateListView(t_lstStudentOverview, studentNames);
+            }
+        }
+
+        private void t_lstStudentOverview_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (t_lstStudentOverview.SelectedItems.Count > 0)
+            {
+                // Clear the previous ones
+                t_lstAssignmentOverview.Items.Clear();
+
+                ListViewItem item = t_lstClassOverview.SelectedItems[0];
+                string selectedClass = item.Text;
+
+                Util.populateListView(t_lstAssignmentOverview, Course.GetCourseAssignmentList(selectedClass));
+            }
+        }
+
+        private void t_lstAssignmentOverview_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (t_lstAssignmentOverview.SelectedItems.Count > 0)
+            {
+                ListViewItem item = t_lstClassOverview.SelectedItems[0];
+                string selectedClass = item.Text;
+
+                item = t_lstStudentOverview.SelectedItems[0];
+                string selectedStudent = item.Text;
+
+                // Get the student data from the format used in the list view
+                var studentData = Person.fromFirstNameLastNameFormat(selectedStudent);
+
+                // Make sure its valid
+                if (studentData.Count > 0)
+                {
+                    Person student = new Person(studentData);
+
+                    item = t_lstAssignmentOverview.SelectedItems[0];
+                    string selectedAssignment = item.Text;
+
+                    var subInfo = Submission.GetSubmissionInfoForStudent(selectedAssignment, student.PersonId);
+
+                    if (subInfo.Count > 0)
+                    {
+                        Submission sub = new Submission(subInfo);
+                    }
+                }
             }
         }
 
@@ -412,5 +476,6 @@ namespace MusicTeacherGUI
             // Wipe the connected user
             ConnectedUser.setConnUser();
         }
+
     }
 }

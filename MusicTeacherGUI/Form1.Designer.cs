@@ -89,7 +89,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.t_tabGrade = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.t_linkSubmission = new System.Windows.Forms.LinkLabel();
             this.t_btnGradeChangeCancel = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.richTextBox2 = new System.Windows.Forms.RichTextBox();
@@ -793,7 +793,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel1.Controls.Add(this.linkLabel1);
+            this.panel1.Controls.Add(this.t_linkSubmission);
             this.panel1.Controls.Add(this.t_btnGradeChangeCancel);
             this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.richTextBox2);
@@ -807,16 +807,16 @@
             this.panel1.Size = new System.Drawing.Size(174, 362);
             this.panel1.TabIndex = 8;
             // 
-            // linkLabel1
+            // t_linkSubmission
             // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel1.Location = new System.Drawing.Point(3, 13);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(168, 16);
-            this.linkLabel1.TabIndex = 15;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Submission Link (Dropbox)";
+            this.t_linkSubmission.AutoSize = true;
+            this.t_linkSubmission.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.t_linkSubmission.Location = new System.Drawing.Point(3, 13);
+            this.t_linkSubmission.Name = "t_linkSubmission";
+            this.t_linkSubmission.Size = new System.Drawing.Size(168, 16);
+            this.t_linkSubmission.TabIndex = 15;
+            this.t_linkSubmission.TabStop = true;
+            this.t_linkSubmission.Text = "Submission Link (Dropbox)";
             // 
             // t_btnGradeChangeCancel
             // 
@@ -898,6 +898,8 @@
             this.t_lstAssignmentOverview.Size = new System.Drawing.Size(141, 245);
             this.t_lstAssignmentOverview.TabIndex = 4;
             this.t_lstAssignmentOverview.UseCompatibleStateImageBehavior = false;
+            this.t_lstAssignmentOverview.View = System.Windows.Forms.View.List;
+            this.t_lstAssignmentOverview.SelectedIndexChanged += new System.EventHandler(this.t_lstAssignmentOverview_SelectedIndexChanged);
             // 
             // label8
             // 
@@ -916,6 +918,8 @@
             this.t_lstStudentOverview.Size = new System.Drawing.Size(141, 245);
             this.t_lstStudentOverview.TabIndex = 2;
             this.t_lstStudentOverview.UseCompatibleStateImageBehavior = false;
+            this.t_lstStudentOverview.View = System.Windows.Forms.View.List;
+            this.t_lstStudentOverview.SelectedIndexChanged += new System.EventHandler(this.t_lstStudentOverview_SelectedIndexChanged);
             // 
             // label7
             // 
@@ -934,6 +938,7 @@
             this.t_lstClassOverview.Size = new System.Drawing.Size(141, 245);
             this.t_lstClassOverview.TabIndex = 0;
             this.t_lstClassOverview.UseCompatibleStateImageBehavior = false;
+            this.t_lstClassOverview.View = System.Windows.Forms.View.List;
             this.t_lstClassOverview.SelectedIndexChanged += new System.EventHandler(this.t_lstClassOverview_SelectedIndexChanged);
             // 
             // t_tabCreateAssignment
@@ -1203,9 +1208,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(699, 458);
+            this.Controls.Add(this.pnlTeacher);
             this.Controls.Add(this.pnlLogin);
             this.Controls.Add(this.pnlStudent);
-            this.Controls.Add(this.pnlTeacher);
             this.Name = "frmApp";
             this.Text = "Music Teacher Application";
             this.Load += new System.EventHandler(this.frmApp_Load);
@@ -1320,7 +1325,7 @@
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.ListView listView2;
-        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.LinkLabel t_linkSubmission;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox s_cmboGradesClass;
